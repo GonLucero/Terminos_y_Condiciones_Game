@@ -32,7 +32,7 @@ const App = () => {
 
   useEffect(() => {
 
-	if(coords.x > 500 && coords.x < 700 ){
+	if(coords.x > 500 && coords.x < 800 ){
 		cambiarEstadoModal1(1)
 	  }else{
 		cambiarEstadoModal1(0)
@@ -141,8 +141,8 @@ Siempre que el sitio web y la información y los servicios en el sitio se propor
 				<h4>¿Aceptas los términos y condiciones?</h4>
 				{/* <p>Reutilizable y con opciones de personalizacion</p> */}
 				<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh'}}>
-				<Boton onClick={() => cambiarEstadoModal1(0)}>Aceptar</Boton>
-				<Boton onClick={() => cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2)}>Aceptar</Boton>
+				<Boton onClick={() => cambiarEstadoModal1(0)}>Si</Boton>
+				<Boton2 onClick={() => cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2)}>No</Boton2>
 				</div>
 
 			</Contenido>
@@ -158,7 +158,7 @@ Siempre que el sitio web y la información y los servicios en el sitio se propor
 			{/* <p>Reutilizable y con opciones de personalizacion</p> */}
 			<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh'}}>
 			<Boton onClick={() => cambiarEstadoModal2(estadoModal2 === 2 ? 0 : 2)}>Aceptar</Boton>
-			<Boton onClick={() => cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2)}>Aceptar</Boton>
+			<Boton2 onClick={() => cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2)}>Aceptar</Boton2>
 			</div>
 			</Contenido>
         </Modal> 
@@ -200,35 +200,35 @@ const ContenedorTerminos = styled.div`
 
 const Boton = styled.button`
 	display: block;
-	padding: 10px 30px;
-	border-radius: 100px;
-	color: #fff;
+	padding: 7px 40px;
+	color: black;
 	border: none;
-	background: #1766DC;
+	background: transparent;
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
+	font-weight: 300;
 	transition: .3s ease all;
+	border: 4px solid;
 
 	&:hover {
-		background: #0066FF;
+		border-color: #c850d1;
 	}
 `;
 
 const Boton2 = styled.button`
 	display: block;
-	padding: 10px 30px;
-	border-radius: 100px;
+	padding: 7px 40px;
+	border-radius: 1px;
 	color: #fff;
-	border: none;
-	background: #1766DC;
+	background: black;
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
+	font-weight: 200;
 	transition: .3s ease all;
-
+	border: 4px solid;
+	border-color: black;
 	&:hover {
-		background: #0066FF;
+		border-color: #c850d1;
 	}
 `;
 
