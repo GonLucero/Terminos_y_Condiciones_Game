@@ -58,10 +58,7 @@ const App = () => {
 	return (
 		<div style={{width:'100%', height:'100vh'}}>
 
-<div style={{backgroundColor:'#e0dcf4', height:'100vh', width:'100vw', display:'flex', position:'absolute'}}>
-<video className='VideoTag' autoPlay loop muted style={{width:'100%', height:'100%', objectFit:'cover'}}>
-      <source src={BackVideo} type='video/mp4'/>
-</video>
+<div style={{backgroundColor:'white', height:'100vh', width:'100vw', display:'flex', position:'absolute'}}>
 			<ContenedorTerminos style={{position:'absolute', marginLeft:'30%'}}>
             <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh'}}>
 								<Boton onClick={() => (play())} style={{fontSize:'25px'}}>Aceptar</Boton>
@@ -106,12 +103,10 @@ const ContenedorBotones = styled.div`
 
 const ContenedorTerminos = styled.div`
 
-	border: 2px solid;
 	margin: auto;
 	width: 40%;
 	height: 100%;
 	background: #bbc1d6;
-	border-radius: 1%;
 	box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
 
 	h1 {
