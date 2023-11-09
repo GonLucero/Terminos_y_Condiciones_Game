@@ -9,15 +9,12 @@ const Modal = ({children, estado, cambiarEstado}) => {
         <Overlay estado={estado}>
             <ContenedorModal estado={estado}>
                 <EncabezadoModal>
-                    <h3>Ventana Emergente</h3>
+                    <h3>Ventana emergente</h3>
                 </EncabezadoModal>
-                <div style={{paddingTop:'3vh', width:'14vw', marginLeft:'7vw'}}>
+                <div style={{ width:'100%', backgroundColor:'#dcdef1', alignContent:'center',  margin: '0 auto', borderRadius:'10px'}}>
                 {children}
-                </div>
-
-                
+                </div> 
             </ContenedorModal>
-
         </Overlay>
         }
         </>
@@ -41,14 +38,14 @@ const Overlay = styled.div`
 `;
 
 const ContenedorModal = styled.div`
-    width: 350px;
-    min-height: 100px;
+    width: 25%;
+    min-height: 5%;
     background: #dcdef1;
     position: relative;
     border-radius: 5px;
     border: 2px solid;
     box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
-    padding: 20px
+    padding: 10%
 
 
     h4 {
@@ -68,7 +65,7 @@ const EncabezadoModal = styled.div`
 
     h3 {
         font-weight: 300;
-        font-size: 16px;
+        font-size: 120%;
         color: black
     }
 `;

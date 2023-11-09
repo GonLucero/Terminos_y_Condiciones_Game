@@ -7,6 +7,7 @@ import boopSfx from './sounds/click.mp3';
 const App = () => {
   const [estadoModal1, cambiarEstadoModal1] = useState(1);
   const [estadoModal2, cambiarEstadoModal2] = useState(0);
+  const [estadoModal3, cambiarEstadoModal3] = useState(3);
   const [coords, setCoords] = useState({x: 0, y: 0});
   const [play] = useSound(boopSfx);
   
@@ -32,15 +33,15 @@ const App = () => {
 
   useEffect(() => {
 
-	if(coords.x > 500 && coords.x < 800 ){
+	if(coords.x < 1000 && coords.x > 700 ){
 		cambiarEstadoModal1(1)
+	  }if(coords.x > 600 && coords.x < 700 ){
+		cambiarEstadoModal2(0)
+	  }
+	  if(coords.x > 800){
+		cambiarEstadoModal3(3)
 	  }else{
 		cambiarEstadoModal1(0)
-	  }
-
-	  if(coords.x > 800){
-		cambiarEstadoModal2(2)
-	  }else{
 		cambiarEstadoModal2(0)
 	  }
 
@@ -52,14 +53,10 @@ const App = () => {
 
 
 	return (
-		<div style={{backgroundColor:'#e0dcf4', height:'100vh', width:'100vw', display:'flex'}} onClick={play}>
-			{/* <ContenedorBotones>
-				<Boton onClick={() => cambiarEstadoModal1(estadoModal2 === 1 ? 0 : 1)}>Modal 1</Boton>
-        		<Boton onClick={() => cambiarEstadoModal2(estadoModal2 === 2 ? 0 : 2)}>Modal 2</Boton>
-			</ContenedorBotones> */}
+		<div style={{backgroundColor:'#e0dcf4', height:'100vh', width:'100vw', display:'flex'}}>
 			<ContenedorTerminos>
 				<h1>TÉRMINOS Y CONDICIONES</h1>
-				<div style={{overflowY:'scroll', height:'35vh', width:'33vw', marginLeft:'0.5vw'}}>
+				<div style={{overflowY:'scroll', height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'3%'}}>
 				<h2 >
 				Al acceder a este sitio web, asumimos que aceptas estos términos y condiciones. No continúes usando El sitio si no estás de acuerdo con todos los términos y condiciones establecidos en esta página.
 Cookies:
@@ -126,42 +123,63 @@ Siempre que el sitio web y la información y los servicios en el sitio se propor
 
 
 			</ContenedorTerminos>
-			{/* <b>
+						{/* <b>
           ({coords.x}, {coords.y})
         </b> */}
+
 			{
+				coords.x > 700 && coords.x < 1000 ?
+					<Modal
+					estado={estadoModal1}
+					cambiarEstado={cambiarEstadoModal1}
+
+					>
+						<Contenido>
+							<h4 style={{width:'70%', marginTop:'5%', marginLeft:'15%'}}>¿Aceptas los términos y condiciones?</h4>
+							{/* <p>Reutilizable y con opciones de personalizacion</p> */}
+							<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh'}}>
+								<Boton onClick={() => (play(),cambiarEstadoModal1(0))}>No</Boton>
+								<Boton2 onClick={() => (play(),cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2))}>Si</Boton2>
+							</div>
+						</Contenido>
+					</Modal> 
+				: null
+			}
+						{
 				coords.x > 100 ?
-		<Modal
-		estado={estadoModal1}
-		cambiarEstado={cambiarEstadoModal1}
-		>
+					<Modal
+					estado={estadoModal1}
+					cambiarEstado={cambiarEstadoModal1}
+					>
+						<Contenido>
+							<h4 style={{width:'70%', marginTop:'5%', marginLeft:'15%'}}>¿Aceptas los términos y condiciones?</h4>
+							{/* <p>Reutilizable y con opciones de personalizacion</p> */}
+							<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh'}}>
+								<Boton onClick={() => (play(),cambiarEstadoModal1(0))}>No</Boton>
+								<Boton2 onClick={() => (play(),cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2))}>Si</Boton2>
+							</div>
+						</Contenido>
+					</Modal> 
+				: null
+			}
+						{
+				coords.x > 100 ?
+					<Modal
+					estado={estadoModal1}
+					cambiarEstado={cambiarEstadoModal1}
+					>
+						<Contenido>
+							<h4 style={{width:'70%', marginTop:'5%', marginLeft:'15%'}}>¿Aceptas los términos y condiciones?</h4>
+							{/* <p>Reutilizable y con opciones de personalizacion</p> */}
+							<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh'}}>
+								<Boton onClick={() => (play(),cambiarEstadoModal1(0))} style={{fontSize:'16px'}}>No</Boton>
+								<Boton2 onClick={() => (play(),cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2))} style={{fontSize:'16px'}}>Si</Boton2>
+							</div>
+						</Contenido>
+					</Modal> 
+				: null
+			}
 
-
-			<Contenido>
-				<h4>¿Aceptas los términos y condiciones?</h4>
-				{/* <p>Reutilizable y con opciones de personalizacion</p> */}
-				<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh'}}>
-				<Boton onClick={() => cambiarEstadoModal1(0)}>Si</Boton>
-				<Boton2 onClick={() => cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2)}>No</Boton2>
-				</div>
-
-			</Contenido>
-        </Modal> 
-					: null
-				}
-        <Modal
-		estado={estadoModal2}
-		cambiarEstado={cambiarEstadoModal2}
-		>
-			<Contenido>
-			<h4>¿Aceptas los términos y condiciones?</h4>
-			{/* <p>Reutilizable y con opciones de personalizacion</p> */}
-			<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh'}}>
-			<Boton onClick={() => cambiarEstadoModal2(estadoModal2 === 2 ? 0 : 2)}>Aceptar</Boton>
-			<Boton2 onClick={() => cambiarEstadoModal2(estadoModal1 === 2 ? 0 : 2)}>Aceptar</Boton2>
-			</div>
-			</Contenido>
-        </Modal> 
 		</div>
 	);
 }
@@ -177,22 +195,27 @@ const ContenedorBotones = styled.div`
 `;
 
 const ContenedorTerminos = styled.div`
+
 	border: 2px solid;
 	margin: auto;
-	width: 40vw;
-	height: 30vw;
-	padding: 40px;
-	background: #fff;
-	border-radius: 0.3vw;
+	width: 40%;
+	height: 65%;
+	background: white;
+	border-radius: 1%;
 	box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
 
 	h1 {
-		font-size: 4.1vw;
+		font-size: 320%;
 		font-weight: 500;
+		text-align: center;
+		padding-inline: 20%;
+		padding-top:5%
+
 	}
 	h2 {
-		font-size: 3.2vh;
+		font-size: 150%;
 		font-weight: 10;
+		
 	}
 `;
 
@@ -200,15 +223,15 @@ const ContenedorTerminos = styled.div`
 
 const Boton = styled.button`
 	display: block;
-	padding: 7px 40px;
+	padding: 2% 10%;
 	color: black;
 	border: none;
-	background: transparent;
+	background: white;
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	transition: .3s ease all;
-	border: 4px solid;
+	border: 3px solid;
 
 	&:hover {
 		border-color: #c850d1;
@@ -217,16 +240,15 @@ const Boton = styled.button`
 
 const Boton2 = styled.button`
 	display: block;
-	padding: 7px 40px;
-	border-radius: 1px;
+	padding: 2% 10%;
 	color: #fff;
 	background: black;
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	transition: .3s ease all;
-	border: 4px solid;
-	border-color: black;
+	border: 3px solid;
+	border-color: white;
 	&:hover {
 		border-color: #c850d1;
 	}
@@ -251,8 +273,9 @@ const Contenido = styled.div`
 	
     h4 {
         font-weight: 400;
-        font-size: 1.4vw;
-        color: black
+        font-size: 2.7vh;
+        color: black,
+
     }
 	img {
 		width: 100%;
