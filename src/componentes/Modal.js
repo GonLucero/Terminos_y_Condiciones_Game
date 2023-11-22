@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Modal = ({children, estado, cambiarEstado}) => {
+const Modal = ({children, estado, cambiarEstado,encabezado}) => {
     console.log('estad',estado)
     return (
         <>
@@ -9,7 +9,7 @@ const Modal = ({children, estado, cambiarEstado}) => {
         <Overlay estado={estado}>
             <ContenedorModal estado={estado}>
                 <EncabezadoModal>
-                    <h3>Ventana emergente</h3>
+                    {encabezado}
                 </EncabezadoModal>
                 <div style={{ width:'100%', backgroundColor:'#dcdef1', alignContent:'center',  margin: '0 auto', borderRadius:'10px'}}>
                 {children}
