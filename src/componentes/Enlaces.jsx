@@ -143,7 +143,16 @@ return (
 				</ContenedorTerminos>
                 :
                 <ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-                <h1 style={{fontSize:'1.8vw', width:'50vw', marginLeft:'-5vw'}}><b>EXENCIÓN DE RESPONSABILIDAD</b></h1>
+                             <h1 style={{fontSize:'1.8vw', width:'50vw', marginLeft:'-5vw'}}><b>GRACIAS POR JUGAR</b></h1>
+                             <div style={{backgroundColor:'#dcdef1', width:'25vw', height:'20vh', marginLeft:'7vw', marginTop:'5vh', borderRadius:'1.5vw'}}>
+                                <h2 style={{textAlign:'center', width:'20vw', marginLeft:'2.8vw', paddingTop:'3vh'}}> Te pedimos disculpas, “ELESPACIO.COM” ha sido dado de baja por algunos inconvenientes con la ley.  </h2>
+                             </div>
+                             <div style={{backgroundColor:'#dcdef1', width:'25vw', height:'20vh', marginLeft:'7vw', marginTop:'5vh', borderRadius:'1.5vw'}}>
+                             <h2 style={{textAlign:'center', width:'20vw', marginLeft:'2.8vw', paddingTop:'6vh'}}>De todas formas, clickea en el link si te interesaba <u style={{color:'blue'}}>“ELESPACIO.COM”</u>  </h2>
+
+                             </div>
+
+                {/* <h1 style={{fontSize:'1.8vw', width:'50vw', marginLeft:'-5vw'}}><b>EXENCIÓN DE RESPONSABILIDAD</b></h1>
                 <div style={{backgroundColor:'#dcdef1', width:'15vw', height:'4vh', marginLeft:'12.5vw',marginTop:'22vh'}}>
                     <h2 style={{paddingTop:'1vh', paddingLeft:'1.5vw', fontSize:'0.9vw'}}>Lee el texto para poder seguir</h2>
                 </div>
@@ -170,7 +179,7 @@ return (
                 <img src={puz20} style={{width:'9vw', position:'fixed', marginTop:'17.2vh', marginLeft:'4vw'}}></img>
                 <img src={puz21} style={{width:'9vw', position:'fixed', marginTop:'17.2vh', marginLeft:'13vw'}}></img>
                 <img src={puz22} style={{width:'9vw', position:'fixed', marginTop:'17.2vh', marginLeft:'22vw'}}></img>
-                <img src={puz23} style={{width:'7.2vw', position:'fixed', marginTop:'17.3vh', marginLeft:'30vw'}}></img>
+                <img src={puz23} style={{width:'7.2vw', position:'fixed', marginTop:'17.3vh', marginLeft:'30vw'}}></img> */}
                         {/* <p style={{marginTop:'250PX'}}>x:{coords.x}, {coords.y}</p> */}
         </ContenedorTerminos>
 				}
