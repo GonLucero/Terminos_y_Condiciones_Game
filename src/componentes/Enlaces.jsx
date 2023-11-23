@@ -150,7 +150,7 @@ return (
   
                 <img src={puz1} style={{width:'10vw', position:'fixed', marginTop:'-22vh', marginLeft:'4vw', visibility:imagen != 1 ? 'hidden' : 'visible'}}></img>
                 <img src={puz2} style={{width:'8.8vw', position:'fixed', marginTop:'-21.8vh', marginLeft:'14vw',visibility:imagen != 2 ? 'hidden' : 'visible'}}></img>
-                <img src={puz3} style={{width:'9.5vw', position:'fixed', marginTop:'-21.8vh', marginLeft:'23vw', visibility:imagen != 3 ? 'hidden' : 'visible'}}></img>
+                <img src={puz3} style={{width:'9.5vw', position:'fixed', marginTop:'-21.8vh', marginLeft:'23vw', visibility:imagen = 3 ? 'hidden' : 'visible'}}></img>
                 <img src={puz4} style={{width:'5vw', position:'fixed', marginTop:'-21.8vh', marginLeft:'32.7vw', visibility:imagen != 4 ? 'hidden' : 'visible'}}></img>
                 <img src={puz5} style={{width:'12vw', position:'fixed', marginTop:'-13vh', marginLeft:'4vw', visibility:imagen != 5 ? 'hidden' : 'visible'}}></img>
                 <img src={puz6} style={{width:'11vw', position:'fixed', marginTop:'-13vh', marginLeft:'16vw',visibility:imagen != 6 ? 'hidden' : 'visible'}}></img>
@@ -171,7 +171,7 @@ return (
                 <img src={puz21} style={{width:'9vw', position:'fixed', marginTop:'17.2vh', marginLeft:'13vw'}}></img>
                 <img src={puz22} style={{width:'9vw', position:'fixed', marginTop:'17.2vh', marginLeft:'22vw'}}></img>
                 <img src={puz23} style={{width:'7.2vw', position:'fixed', marginTop:'17.3vh', marginLeft:'30vw'}}></img>
-                        <p style={{marginTop:'250PX'}}>x:{coords.x}, {coords.y}</p>
+                        {/* <p style={{marginTop:'250PX'}}>x:{coords.x}, {coords.y}</p> */}
         </ContenedorTerminos>
 				}
 
