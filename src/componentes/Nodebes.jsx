@@ -108,7 +108,7 @@ return (
                         <div>
                             <div style={{display:'flex', flexDirection:'row'}}>
                                 <Boton3 onClick={() => (play(),cambiarContinuar2(1))} style={{fontSize:'1.1vw', fontWeight:'100', width:'14vw', height:'8vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Copiar material de esta web</Boton3>
-                                <Boton3 onClick={() => (play(),cambiarEstadoModal2(1))} style={{fontSize:'1.1vw', fontWeight:'100', width:'14vw', height:'8vh', marginTop:'10vh', marginLeft:'4vw'}}>Compartir contenido obsceno</Boton3>
+                                <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(0))} style={{fontSize:'1.1vw', fontWeight:'100', width:'14vw', height:'8vh', marginTop:'10vh', marginLeft:'4vw'}}>Compartir contenido obsceno</Boton3>
                             </div>
                             <div style={{display:'flex', flexDirection:'row'}}>
                                 <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(1))} style={{fontSize:'1.1vw', fontWeight:'100', width:'14vw',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Causar molestias o daños a otros usuarios a traves de nuestro servicio</Boton3>
@@ -165,7 +165,7 @@ return (
                                ERROR
                             </h3>
                             <div style={{width:'3vw', marginLeft:'17vw', position:'absolute'}}>
-                                <Boton onClick={() => (refreshPage())} style={{marginLeft:'1vw', borderWidth:'0px', backgroundColor:'transparent', marginTop:'0.2vh'}}>
+                                <Boton onClick={() => (cambiarEstadoModal2(0))} style={{marginLeft:'1vw', borderWidth:'0px', backgroundColor:'transparent', marginTop:'0.2vh'}}>
                                     <h3 style={{width:'0.2vw'}}>X</h3>
                                 </Boton>
                             </div>
@@ -190,6 +190,12 @@ return (
                                     </h3>
                                 </div>
                                 : 
+                                estadoModalValor === 2  ?
+                                <div style={{ width:'19vw', marginBottom:'3vh', marginTop:'2vh', marginLeft:'1vw'}}>
+                                <h3 style={{fontWeight:'500'}}>  
+                                <b>¡Advertimos!</b> que proporcionar información falsa puede tener <u>efectos secundarios</u>, como la pérdida momentánea de credibilidad y el riesgo de que te etiqueten como "conspiranoicx" en tus círculos sociales. Pero, ¿quién necesita credibilidad cuando se pueden tener historias increíblemente inverosímiles?                                </h3>
+                                </div>
+                            :
                                 estadoModalValor === 3  ?
                                 <div style={{ width:'19vw', marginBottom:'3vh', marginTop:'2vh', marginLeft:'1vw'}}>
                                 <h3 style={{fontWeight:'500'}}>  

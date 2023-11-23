@@ -7,10 +7,12 @@ import { useNavigate } from 'react-router-dom'
 import luna from '../assets/luna.png'
 import cookie from '../assets/cookie.png'
 import cookieentera from '../assets/cookie-entera2.png'
+import { hover } from '@testing-library/user-event/dist/hover';
 
 const Home = () => {
   const navigate = useNavigate();
   const [estadoLogo, cambiarEstadoLogo] = useState(0);
+  const [hoverBoton, cambiarhoverBoton] = useState(0);
   const [estadoModal, cambiarEstadoModal] = useState(0);
   const [estadoModal2, cambiarEstadoModal2] = useState(0);
   const [tipoModal, cambiarTipoModal] = useState(0);
@@ -32,6 +34,7 @@ const Home = () => {
   const [estadoCookie15, cambiarEstadoCookie15] = useState(0);
   const [estadoCookie16, cambiarEstadoCookie16] = useState(0);
   const [estadoCookie17, cambiarEstadoCookie17] = useState(0);
+  const [estadoCookie18, cambiarEstadoCookie18] = useState(0);
   
   
 
@@ -71,6 +74,21 @@ return (
                         <img src={estadoCookie15 === 0  ? cookieentera : luna} alt='Luna' style={{width:'6vw', marginLeft:'-3vw',marginTop:'-24vh', position:'absolute'}} onClick={()=>(cambiarEstadoCookie15(1),cambiarEstadoModal2(1))}></img>
                         <img src={estadoCookie16 === 0  ? cookieentera : luna} alt='Luna' style={{width:'6vw', marginLeft:'1vw',marginTop:'-12vh', position:'absolute'}} onClick={()=>(cambiarEstadoCookie16(1),cambiarEstadoModal2(1))}></img>
                         <img src={estadoCookie17 === 0  ? cookieentera : luna} alt='Luna' style={{width:'6vw', marginLeft:'1vw',marginTop:'-1vh', position:'absolute'}} onClick={()=>(cambiarEstadoCookie17(1),cambiarEstadoModal2(1))}></img>
+                           
+                                  {
+                                    estadoCookie === 1 && estadoCookie2 === 1 && estadoCookie3 === 1 && estadoCookie4 === 1 ?
+                                            
+                                    <div onMouseOver={()=> cambiarhoverBoton(1)} onMouseOut={()=>  cambiarhoverBoton(0)} style={{width:'6vw',height:'10vh', marginLeft:'35vw',marginTop:'-16vh', position:'absolute'}}>
+                                        <img   src={cookieentera} alt='Luna' style={{width:'6vw', marginLeft:'0vw', position:'absolute',visibility: hoverBoton === 0 ?'hidden' : 'visible'}} onClick={()=>(cambiarEstadoModal(1),cambiarTipoModal(5))}></img>
+                                    </div>
+                                                            : null
+
+                                  }  
+
+
+                          
+
+
 
                         {/* <img src={cookieentera} alt='Luna'></img>
                         <img src={cookieentera} alt='Luna'></img>
@@ -94,7 +112,7 @@ return (
                     <div style={{width:'30%', backgroundColor:'white', height:'90%', marginTop:'3.5vh', marginLeft:'1vw', border: '2px solid', borderRadius:'0.5vw'}}>
                         <h2 style={{fontSize:'2vw', marginTop:'2vh', marginLeft:'1vw'}}>GALLETITAS</h2>
                         <div style={{width:'17vw', marginLeft:'1vw', marginTop:'3vh'}}>
-                            <p style={{fontSize:'1.2vw'}}>Come todas las galletitas para poder seguir, No te olvides de  marcar las que tienes.</p>
+                            <p style={{fontSize:'1.2vw'}}>Come todas las galletitas para poder seguir.</p>
                         </div>
                         <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
@@ -114,11 +132,11 @@ return (
                                 <h3 style={{marginLeft:'0.2vw', fontSize:'1vw'}}>Pérdida de la identidad digital</h3>
                             </div>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" value="Paneer" onChange={()=>cambiarUltimocheckbox(1)} style={{width:'3vw'}} disabled={estadoCookie != 1 || estadoCookie2 != 1 || estadoCookie3 != 1 || estadoCookie4 != 1} />
+                                <input type="checkbox" id="topping" name="topping" value="Paneer"  checked={estadoCookie18 != 0 ? true : false} style={{width:'3vw'}}  />
                                 <h3 style={{marginLeft:'0.2vw', fontSize:'1vw'}}>Esclavitud de la publicidad</h3>
                             </div>
                             {
-                                ultimoCheckbox === 1 ?
+                                estadoCookie18 === 1 ?
                                 <Boton3 onClick={() => (play(),navigate(`/licencia`))} style={{fontSize:'25px', fontWeight:'200', width:'8vw', height:'6vh', marginTop:'5vh', marginLeft:'5vw'}}>Seguir</Boton3>
                                 : null
                             }
@@ -135,10 +153,10 @@ return (
                         <div style={{display:'flex',flexDirection:'row'}}>
                             
                             <h3 style={{fontSize:'120%', width:'15vw', marginTop:'0.3vh', display:'flex',justifyContent:'center'}}>
-                                {tipoModal === 1 ? 'Invasión de la privacidad' : tipoModal === 2 ? 'Adicción a la personalización' : tipoModal === 3 ? 'Control mental digital' : 'Pérdida de identidad digital'} 
+                                {tipoModal === 1 ? 'Invasión de la privacidad' : tipoModal === 2 ? 'Adicción a la personalización' : tipoModal === 3 ? 'Control mental digital' : tipoModal === 4 ?'Pérdida de identidad digital':'Esclavitud de la publicidad'} 
                             </h3>
                             <div style={{width:'3vw', marginLeft:'17vw', position:'absolute'}}>
-                                <Boton onClick={() => (cambiarEstadoModal(0))} style={{marginLeft:'1vw', borderWidth:'0px', backgroundColor:'transparent', marginTop:'0.5vh'}}>
+                                <Boton onClick={() => (tipoModal === 5 ? (cambiarEstadoCookie18(1),cambiarEstadoModal(0)) : cambiarEstadoModal(0))} style={{marginLeft:'1vw', borderWidth:'0px', backgroundColor:'transparent', marginTop:'0.5vh'}}>
                                     <h3 style={{width:'0.2vw'}}>X</h3>
                                 </Boton>
                             </div>
@@ -153,7 +171,7 @@ return (
                         </div>
                         <div style={{ width:'18vw', marginBottom:'3vh'}}>
 							<h3>                               
-                            {tipoModal === 1 ? 'Las cookies son como pequeños espías que registran hasta tu último click, observandote como si fueran una versión digital de Gran Hermano.': tipoModal === 4 ?'Estas permitiendo que tu perfil digital sea tan detallado que hasta los agentes secretos se sorprenderán.' : tipoModal === 2 ?'Las cookies convertirán a esta web en un amigo cercano que siempre sabrá lo que quieras, limitando tu exposición a nuevas ideas y experiencias.' : 'Las cookies no solo rastrearán tu historial, sino que también parecen conocer tus pensamientos antes de lo que pienses. ¿Quien necesita libre albedrío cuando las cookies te dicen que querer?'} 
+                            {tipoModal === 1 ? 'Las cookies son como pequeños espías que registran hasta tu último click, observandote como si fueran una versión digital de Gran Hermano.': tipoModal === 4 ?'Estas permitiendo que tu perfil digital sea tan detallado que hasta los agentes secretos se sorprenderán.' : tipoModal === 2 ?'Las cookies convertirán a esta web en un amigo cercano que siempre sabrá lo que quieras, limitando tu exposición a nuevas ideas y experiencias.' : tipoModal === 3 ?'Las cookies no solo rastrearán tu historial, sino que también parecen conocer tus pensamientos antes de lo que pienses. ¿Quien necesita libre albedrío cuando las cookies te dicen que querer?' : 'Al aceptarlas, estás abriendo las puertas de un paraíso publicitario, donde anuncios persiguen tus deseos hasta en tus pesadillas.'} 
                             </h3>
                         
                         </div>
@@ -325,4 +343,7 @@ const Contenido = styled.div`
 		vertical-align: top;
 		border-radius: 3px;
 	}
+    image:hover {
+        visibility: hidden;
+      }
 `;

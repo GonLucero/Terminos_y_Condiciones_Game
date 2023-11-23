@@ -4,14 +4,28 @@ import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
 import { useNavigate } from 'react-router-dom'
+import imagen1 from '../assets/imagen1.png'
+import imagen11 from '../assets/imagen11.png'
+import imagen2 from '../assets/imagen2.png'
+import imagen22 from '../assets/imagen22.png'
+import imagen3 from '../assets/imagen3.png'
+import imagen33 from '../assets/imagen33.png'
+import imagen4 from '../assets/imagen4.png'
+import imagen5 from '../assets/imagen5.png'
+import imagen6 from '../assets/imagen6.png'
+import imagen7 from '../assets/imagen7.png'
+import imagen8 from '../assets/imagen8.png'
+import iconeye from '../assets/icon_eye.png'
 
 const Responsabilidad = () => {
   const navigate = useNavigate();
   const [estadoLogo, cambiarEstadoLogo] = useState(0);
   const [continuar, cambiarContinuar] = useState(0);
-  const [checkbox, setCheckbox] = useState(0);
-  const [checkbox2, setCheckbox2] = useState(0);
+  const [continuar2, cambiarContinuar2] = useState(0);
+  const [estado_imagen, cambiarestado_imagen] = useState(0);
   const [play] = useSound(boopSfx);
+
+  console.log('oco',continuar2)
 
 
 return (
@@ -43,54 +57,48 @@ return (
 					</div>
 				</ContenedorTerminos>
 				:
+                continuar2 === 0  ?
+				
 					<ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-						<h1>LICENCIA</h1>
-                        {
-                            checkbox && checkbox2 ?
-                            null
-                            :
-                        <div style={{marginTop:'1vh'}}>
-                            <u style={{fontWeight:'bold', marginLeft:'10vw'}}>DALE CLICK A LOS CUADRADOS PARA ACEPTAR</u>
-                        </div>
-                        }
-  
-                        <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
-                            <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={checkbox} onChange={()=> setCheckbox(!checkbox)}  style={{width:'3vw'}} />
-                                <h3 style={{marginLeft:'0.5vw', fontSize:'0.8vw', fontWeight:'bold'}}> Recibe una licencia limitada, no exclusiva y no transferible para utilizar nuestros servicios de acuerdo con las disposiciones establecidas en este documento.</h3>
-                            </div>
-                            <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={checkbox2} onChange={()=> setCheckbox2(!checkbox2)} style={{width:'4vw'}} />
-                                <h3 style={{marginLeft:'0.5vw', fontSize:'0.8vw', fontWeight:'bold'}}> Te comprometes a no realizar ingeniería inversa, descompilación, ni modificar de ninguna manera nuestros productos y servicios. Además, reconoce que la propiedad intelectual, sigue siendo propiedad exclusiva nuestra.</h3>
-                            </div>
-                            {
-                                checkbox && checkbox2 ?
-                                <div>
-                                <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={true} style={{width:'3.3vw'}} />
-                                <h3 style={{marginLeft:'0.5vw', fontSize:'0.8vw', fontWeight:'bold'}}> Usuario Incógnito, Edición Especial:  Tus datos personales se convertiran en un juego de aventuras donde, quién sabe, podrían terminar en manos de una agencia de inteligencia.</h3>
-                            </div>
-                            <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={true} style={{width:'3.8vw'}} />
-                                <h3 style={{marginLeft:'0.5vw', fontSize:'0.8vw', fontWeight:'bold'}}> Rastrearemos cada clic, movimiento y suspiro digital que emites. Después de todo, ¿quién no querría que su vida en línea sea analizada como un capítulo emocionante de una novela digital interactiva?.</h3>
-                            </div>
-                            <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={true} style={{width:'2.4vw'}} />
-                                <h3 style={{marginLeft:'0.5vw', fontSize:'0.8vw', fontWeight:'bold'}}> Venta de datos: Tus datos personales son tan valiosos que los venderemos al mejor postor en un mercado digital clandestino.</h3>
-                            </div>
-                            <div style={{backgroundColor:'#dcdef1', width:'30vw', height:'10vh', marginTop:'2vh', border:'2px solid'}}>
-                                <h2 style={{marginLeft:'1vw', fontSize:'0.8vw', paddingTop:'2vh', fontWeight:'500'}}>Este documento establece las bases para una relación de uso respetuosa y protección de datos, reforzando nuestro compromiso con la privacidad y la seguridad digital.</h2>
-                            </div>
-                            <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-10vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'22vw'}}>
-									<Boton2  style={{fontSize:'2vw', width:'3vw', height:'3vw'}} onClick={() => (play(),navigate(`/nodebes`))}> {'>'} </Boton2>
-						</div>
-                            </div>
-                            : null
-                            }
+						<h2 style={{width:'28vw', marginLeft:'6vw', marginTop:'4vh'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
+                        <div style={{display:'flex', flexDirection:'row', marginLeft:'2vw', marginTop:'3vh'}}>
+                        <img onClick={()=>cambiarestado_imagen(1)} src={estado_imagen != 1 ? imagen1 : imagen11} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
+                        <img src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'5vh', marginLeft:'6.5vw', visibility:estado_imagen != 1 ? 'visible' : 'hidden'}} ></img>
 
-                       </div>
-					
+                        <img onClick={()=>cambiarestado_imagen(2)} src={estado_imagen != 2 ? imagen2 : imagen22} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'2vh', marginLeft:'20vw'}} ></img>
+                        <img src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'5vh', marginLeft:'24.5vw', visibility:estado_imagen != 2 ? 'visible' : 'hidden'}} ></img>
+                        </div>
+                        <div style={{display:'flex', flexDirection:'row', marginLeft:'2vw'}}>
+                        <img onClick={()=>cambiarestado_imagen(3)} src={estado_imagen != 3 ? imagen3 : imagen33} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'20vh', marginLeft:'2vw'}} ></img>
+                        <img src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'24vh', marginLeft:'6.5vw', visibility:estado_imagen != 3 ? 'visible' : 'hidden'}}></img>
+                        <div  >
+                        <img onClick={()=>cambiarContinuar2(1)} src={imagen4} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'20vh', marginLeft:'20vw'}} ></img>
+
+                        </div>
+                        <img  src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'24vh', marginLeft:'24.5vw'}} ></img>
+
+                        </div>
 				</ContenedorTerminos>
+                :
+
+                <ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+                <h2 style={{width:'28vw', marginLeft:'6vw', marginTop:'4vh'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
+                <div style={{display:'flex', flexDirection:'row', marginLeft:'2vw', marginTop:'3vh'}}>
+                <img src={imagen5} onClick={()=> navigate(`/derechos`)} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
+                <img src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'5vh', marginLeft:'6.5vw'}} ></img>
+
+                <img onClick={()=>cambiarestado_imagen(6)} src={estado_imagen != 6 ? imagen6 : imagen22} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'2vh', marginLeft:'20vw'}} ></img>
+                <img src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'5vh', marginLeft:'24.5vw', visibility:estado_imagen != 6 ? 'visible' : 'hidden'}} ></img>
+                </div>
+                <div style={{display:'flex', flexDirection:'row', marginLeft:'2vw'}}>
+                <img onClick={()=>cambiarestado_imagen(7)} src={estado_imagen != 7 ? imagen7 : imagen11} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'20vh', marginLeft:'2vw'}} ></img>
+                <img src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'24vh', marginLeft:'6.5vw', visibility:estado_imagen != 7 ? 'visible' : 'hidden'}} ></img>
+
+                <img onClick={()=>cambiarestado_imagen(8)} src={estado_imagen != 8 ? imagen8 : imagen33} alt='Luna' style={{width:'13vw', position:'fixed', marginTop:'20vh', marginLeft:'20vw'}} ></img>
+                <img src={iconeye} alt='Luna' style={{width:'4vw', position:'fixed', marginTop:'24vh', marginLeft:'24.5vw', visibility:estado_imagen != 8 ? 'visible' : 'hidden'}} ></img>
+
+                </div>
+        </ContenedorTerminos>
 				}
 
 
