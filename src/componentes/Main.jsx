@@ -6,7 +6,7 @@ import boopSfx from '../sounds/click.mp3';
 import BackVideo from '../sounds/Public.mp4';
 import { useNavigate } from 'react-router-dom'
 
-const App = () => {
+const Main = () => {
   const [estadoModal1, cambiarEstadoModal1] = useState(0);
   const [estadoModal2, cambiarEstadoModal2] = useState(0);
   const [estadoModal3, cambiarEstadoModal3] = useState(3);
@@ -108,7 +108,7 @@ Ten cuidado... Hay cosas que estan fuera de control
 	);
 }
  
-export default App;
+export default Main;
 
 const ContenedorBotones = styled.div`
 	padding: 40px;

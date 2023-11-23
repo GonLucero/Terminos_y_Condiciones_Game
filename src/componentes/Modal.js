@@ -5,7 +5,7 @@ const Modal = ({children, estado, cambiarEstado,encabezado}) => {
     console.log('estad',estado)
     return (
         <>
-        {estado != 0 &&
+        {estado === 1  &&
         <Overlay estado={estado}>
             <ContenedorModal estado={estado}>
                 <EncabezadoModal>
@@ -32,9 +32,8 @@ const Overlay = styled.div`
     background: rgba(0,0,0,.3);
     padding: 40px;
     display: flex;
-    align-items: ${props => props.estado === 1 ? "center" : "end"};
-    zIndex: ${props => props.estado === 2 ? 100 : 10};
-    justify-content: ${props => props.estado === 1 ? "center" : "end"};
+    align-items:center;
+    justify-content: center;
 `;
 
 const ContenedorModal = styled.div`

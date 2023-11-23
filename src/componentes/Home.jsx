@@ -3,10 +3,11 @@ import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
-import BackVideo from '../sounds/Public.mp4';
+import { useNavigate } from 'react-router-dom'
 
-const App = () => {
+const Home = () => {
   const [estadoModal1, cambiarEstadoModal1] = useState(0);
+  const navigate = useNavigate();
   const [estadoLogo, cambiarEstadoLogo] = useState(0);
   const [continuar, cambiarContinuar] = useState(0);
   const [continuar2, cambiarContinuar2] = useState(0);
@@ -74,7 +75,7 @@ return (
 			<div style={{backgroundColor:'#e0dcf4', height:'100vh', width:'100vw', display:'flex', position:'absolute'}}>
 			<div style={{ width:'10vw', marginLeft:'90vw', marginTop:'5vh' }}>
 								<Boton onClick={() => (play(),cambiarEstadoLogo(1))} style={{fontSize:'40px', fontWeight:'1000', letterSpacing:'-3px', width:'3.5vw', paddingLeft:'0.8vw'}}>tc</Boton>
-								<Boton3 onClick={() => (play(),cambiarEstadoLogo(1))} style={{fontSize:'25px', fontWeight:'200', width:'8vw', height:'6vh', marginTop:'75vh', marginLeft:'-3vw'}}>REINICIAR</Boton3>
+								<Boton3 onClick={() => (play(),navigate(`/`))} style={{fontSize:'25px', fontWeight:'200', width:'8vw', height:'6vh', marginTop:'75vh', marginLeft:'-3vw'}}>REINICIAR</Boton3>
 
 			</div>
 				{
@@ -92,7 +93,7 @@ return (
 						</h2>
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'5vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'3vw'}}>
 									<Boton onMouseOver={()=>cambiarhoverBoton(1)} onMouseOut={()=>cambiarhoverBoton(0)} style={{fontSize:'1vw', width:'10vw', height:'5.8vh'}} onClick={() => (play(),cambiarContinuar(1))}>{hoverBoton === 1 ? 'Continuar':'Salir'} </Boton>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'10vw', height:'6vh'}} onClick={() => (play())}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'10vw', height:'6vh'}} onClick={() => (play(),navigate(`/`))}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>
@@ -119,7 +120,7 @@ return (
 
 
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'7vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'20vw'}}>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'3vw', height:'3vw'}} onClick={() => (play(),cambiarContinuar2(1))}> {'>'} </Boton2>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'3vw', height:'3vw'}} onClick={() => (play(), continuar2 === 0 ?cambiarContinuar2(1) : navigate(`/cookies`))}> {'>'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>
@@ -147,7 +148,7 @@ return (
 );
 }
  
-export default App;
+export default Home;
 
 const ContenedorBotones = styled.div`
 	padding: 40px;
