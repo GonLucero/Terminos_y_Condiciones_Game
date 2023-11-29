@@ -75,48 +75,48 @@ return (
 				{
 					continuar === 0
 					?
-					<ContenedorTerminos style={{position:'absolute', marginLeft:'25%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+					<ContenedorTerminos style={{position:'absolute', marginLeft:'20%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 					
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px',borderTopRightRadius:'10px'}}>
 						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
 					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'0%', }}>
-						<h1 style={{fontSize:'160%'}}><b>INICIO</b></h1>
-						<h2 style={{marginTop:'5%', width:'100%', textAlign:'center', marginLeft:'0%'}}>
+						<h1 style={{fontSize:'200%'}}><b>INICIO</b></h1>
+						<h2 style={{marginTop:'5%', width:'80%', textAlign:'center', marginLeft:'9%', fontSize:'2.3vw'}}>
 							Al acceder a este sitio web, asumimos que <b><u>aceptas</u></b> estos <i>términos y condiciones</i>. <del>No</del> continúes usando el sitio si no estás de acuerdo con todos los <b><i>términos y condiciones</i></b> establecidos en esta página.
 						</h2>
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'3vw'}}>
 									<Boton onMouseOver={()=>cambiarhoverBoton(1)} onMouseOut={()=>cambiarhoverBoton(0)} style={{fontSize:'1vw', width:'15vw', height:'75%', fontSize:'140%'}} onClick={() => (play(),cambiarContinuar(1))}>{hoverBoton === 1 ? 'Continuar':'Salir'} </Boton>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'15vw', height:'80%', fontSize:'140%', marginRight:'-45%'}} onClick={() => (play(),navigate(`/`))}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'15vw', height:'80%', fontSize:'140%', marginRight:'-85%'}} onClick={() => (play(),navigate(`/`))}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>
 				:
-				<ContenedorTerminos style={{position:'absolute', marginLeft:'25%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+				<ContenedorTerminos style={{position:'absolute', marginLeft:'20%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 						
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
 						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
-					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'3%', }}>
-						<h1 style={{fontSize:'160%'}}><b>¿CON HAMBRE...?</b></h1>
+					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'0%', }}>
+						<h1 style={{fontSize:'200%'}}><b>¿CON HAMBRE...?</b></h1>
 						{
 							continuar2 === 0
 							?
-							<h2 style={{marginTop:'10%'}}>
+							<h2 style={{marginTop:'5%', width:'80%', textAlign:'center', marginLeft:'9%', fontSize:'2.3vw'}}>
 							Este sitio web utiliza cookies web para personalizar tu experiencia según el tipo de contenido que consumes. Las cookies de esta página se pueden utilizar para ejecutar programas <del>y enviar virus a tu computadora.</del> 						
 						</h2>
 						:
 						<div style={{marginLeft:'6%'}}>
-							<h2 style={{marginTop:'5%'}}>
+						<h2 style={{marginTop:'5%', width:'80%', textAlign:'center', marginLeft:'9%', fontSize:'2.3vw'}}>
 							Podemos utilizar cookies para recopilar, almacenar y rastrear tu información  con fines estadísticos o de marketing <del>para obtener más margen de ganancia.</del> 
-							<p style={{width:'25vw', height:'3vh', marginLeft:'4vw', paddingTop:'2vh'}}><i>¡Gracias a las cookies podrás obtener publicidad específica para el consumo específico que precises!</i>		</p>				
+							<p style={{width:'35vw', height:'3vh', marginLeft:'1vw', paddingTop:'4vh'}}><i>¡Gracias a las cookies podrás obtener publicidad específica de lo que deseas consumir!</i>		</p>				
 							</h2>
 						</div>
 						}
 
 
-						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'5%', height:'10vh',alignItems:'center', marginLeft:'70%'}}>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'25%', height:'90%', fontSize:'200%'}} onClick={() => (play(), continuar2 === 0 ?cambiarContinuar2(1) : navigate(`/cookies`))}> {'>'} </Boton2>
+						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'7%', height:'10vh',alignItems:'center', marginLeft:'75%'}}>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(), continuar2 === 0 ?cambiarContinuar2(1) : navigate(`/cookies`))}> {'>'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>
@@ -142,7 +142,7 @@ const ContenedorTerminos = styled.div`
 
 	border: 2px solid;
 	margin: auto;
-	width: 55%;
+	width: 65%;
 	height: 70%;
 	background: white;
 	border-radius: 3%;

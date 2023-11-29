@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
 import { useNavigate } from 'react-router-dom'
 import mujerperfil from '../assets/mujerperfil.png'
 import hombreperfil from '../assets/hombreperfil.png'
+import reinicio from '../assets/general/reinicio.png'
+
 
 const Derechos = () => {
   const navigate = useNavigate();
@@ -35,97 +36,116 @@ const handleInputChange4 = ( e ) => {
 
 return (
 		<div style={{width:'100%', height:'100vh'}}>
-			
-			<div style={{backgroundColor:'#e0dcf4', height:'100vh', width:'100vw', display:'flex', position:'absolute'}}>
-			<div style={{ width:'10vw', marginLeft:'90vw', marginTop:'5vh' }}>
-								<Boton onClick={() => (play(),cambiarEstadoLogo(1))} style={{fontSize:'40px', fontWeight:'1000', letterSpacing:'-3px', width:'3.5vw', paddingLeft:'0.8vw'}}>tc</Boton>
-								<Boton3 onClick={() => (play(),navigate(`/`))} style={{fontSize:'25px', fontWeight:'200', width:'8vw', height:'6vh', marginTop:'75vh', marginLeft:'-3vw'}}>REINICIAR</Boton3>
-
-			</div>
+					          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+	
 				{
 					continuar === 0
 					?
-					<ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+					<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 					
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
 						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
-					<div style={{ height:'55%', width:'90%', alignSelf:'center', marginLeft:'2.5vw', marginTop:'0%',}}>
+					<div style={{ height:'55%', width:'120%', alignSelf:'center', marginLeft:'-6vw', marginTop:'0%',}}>
 						<h1 style={{fontSize:'200%'}}><b>RESERVA DE DERECHOS</b></h1>
-						<h2 style={{marginTop:'8%', width:'28vw', marginLeft:'3vw'}}>
-                        Nos reservamos el derecho a modificar o eliminar los datos ingresados, almacenarlos y utilizarlos para diversos fines. También nos reservamos el derecho a modificar estos términos y condiciones <p style={{marginLeft:'8vw'}}>en cualquier momento. </p>                       </h2>
-						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'20vw'}}>
-									<Boton2  style={{fontSize:'2vw', width:'3vw', height:'3vw'}} onClick={() => (play(),cambiarContinuar(1))}> {'>'} </Boton2>
+						<h2 style={{marginTop:'3%', width:'53vw', marginLeft:'12vw', textAlign:'center',fontSize:'150%'}}>
+                        Nos reservamos el derecho a modificar o eliminar los datos ingresados, almacenarlos y utilizarlos para diversos fines. También nos reservamos el derecho a modificar estos términos y condiciones en cualquier momento.                     </h2>
+						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'6%', height:'10vh',alignItems:'center', marginLeft:'68%'}}>
+									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(),cambiarContinuar(1))}> {'>'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>
 				:
                 continuar2 === 0 ?
-					<ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-						<div style={{marginTop:'3vh'}}>
-                        <b><u style={{fontSize:'1.5vw', marginLeft:'12vw'}}>INGRESÁ TUS DATOS</u></b>
+				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+				<div style={{marginTop:'6vh'}}>
+                        <b><u style={{fontSize:'3vw', marginLeft:'17vw'}}>INGRESÁ TUS DATOS</u></b>
                         </div>
-                        <div style={{display:'flex', flexDirection:'row', width:'28vw', marginTop:'10vh', marginLeft:'4vw'}}>    
-                            <h3 style={{alignSelf:'center'}}>NOMBRE</h3>                    
+						<div style={{display:'flex', flexDirection:'row', marginTop:'13%'}}>
+                        <div style={{width:'28vw', marginLeft:'4vw', justifyContent:'center', marginTop:'2%'}}>    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Nombre:</h3>                    
                         <input 
                         type="text" 
                         value={ inputValue } 
                         onChange={ handleInputChange } 
-                        style={{height:'4vh', width:'11vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', marginLeft:'6vw', paddingLeft:'0.5vw'}}
+                        style={{height:'5vh', width:'25vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'1vw', fontSize:'1.5vw'}}
 
                         className="SearchbarInput"
                          />
                         </div>
-                        <div style={{display:'flex', flexDirection:'row', width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
-                            <h3 style={{alignSelf:'center'}}>EMAIL</h3>                    
+
+                        <div style={{width:'28vw', marginLeft:'4vw', justifyContent:'center', marginTop:'2%'}}>    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Email:</h3>                    
                         <input 
                         type="text" 
                         value={ inputValue2 } 
                         onChange={ handleInputChange2 } 
-                        style={{height:'4vh', width:'11vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', marginLeft:'7.3vw', paddingLeft:'0.5vw'}}
+                        style={{height:'5vh', width:'25vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'1vw', fontSize:'1.5vw'}}
 
                         className="SearchbarInput"
                          />
                         </div>
-                        <div style={{display:'flex', flexDirection:'row', width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
-                            <h3 style={{alignSelf:'center'}}>EDAD</h3>                    
-                        <input 
-                        type="text" 
-                        value={ inputValue3 } 
-                        onChange={ handleInputChange3 } 
-                        style={{height:'4vh', width:'11vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', marginLeft:'7.4vw', paddingLeft:'0.5vw'}}
+						</div>
+						<div style={{display:'flex', flexDirection:'row'}}>
 
-                        className="SearchbarInput"
-                         />
-                        </div>
-                        <div style={{display:'flex', flexDirection:'row', width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
-                            <h3 style={{alignSelf:'center'}}>NACIONALIDAD</h3>                    
+                        <div style={{ width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Nacionalidad:</h3>                    
                         <input 
                         type="text" 
                         value={ inputValue4 } 
                         onChange={ handleInputChange4 } 
-                        style={{height:'4vh', width:'11vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', marginLeft:'2.7vw', paddingLeft:'0.5vw'}}
+                        style={{height:'5vh', width:'25vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'1vw', fontSize:'1.5vw'}}
 
                         className="SearchbarInput"
                          />
                         </div>
-  
+
+						<div style={{ width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Edad:</h3>                    
+                        <input 
+                        type="text" 
+                        value={ inputValue3 } 
+                        onChange={ handleInputChange3 } 
+                        style={{height:'5vh', width:'25vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'1vw', fontSize:'1.5vw'}}
+
+                        className="SearchbarInput"
+                         />
+                        </div>
+						</div>
                         <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
 
                        </div>
-                       <Boton2  disabled={inputValue4 === ''} style={{fontSize:'2vw', width:'3vw', height:'3vw', marginLeft:'34vw', marginTop:'5vh'}} onClick={()=>cambiarContinuar2(1)}> {'>'} </Boton2>
-
+					   <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'10%', height:'10vh',alignItems:'center', marginLeft:'72%'}}>
+                       	<Boton2  disabled={inputValue3 === ''} style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={()=>cambiarContinuar2(1)}> {'>'} </Boton2>
+					   </div>
 				</ContenedorTerminos>
                 :
-                <ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-                    <div style={{ width:'25vw', height:'35vh'}}>
-                    <h3 style={{fontSize:'1.2vw', marginLeft:'2vw', marginTop:'5vh'}}>NOMBRE:  {perfil === 0 ? 'JUANA CHISPA' : perfil === 1 ? 'ISABELLA ESPEJO': perfil === 2 ? 'CARLOS BURBUJEZ' : perfil === 3 ?'OSCAR MALABAR' : 'RENATA VALLEJOS'}</h3>
-                    <h3 style={{fontSize:'1.2vw', marginLeft:'2vw', marginTop:'6vh'}} >EMAIL: {perfil === 0 ?'juanachispita@gmail.com': perfil === 1 ? 'isabellajimenez@hotmail.com' : perfil === 2 ?'carlosburbujez@gmail.com': perfil === 3 ? 'oscarmalab@gmail.com' : 'renuvallejos@gmail.com'}</h3>
-                    <h3 style={{fontSize:'1.2vw', marginLeft:'2vw', marginTop:'6vh'}} >EDAD: {perfil === 0 ? '21 años' : perfil === 1 ? 'Inmortal' : perfil === 2 ?  '28 años': perfil === 3 ? '37 años' : '19 años'}</h3>
-                    <h3 style={{fontSize:'1.2vw', marginLeft:'2vw', marginTop:'6vh'}} >NACIONALIDAD: {perfil === 0 ?'MEXICANA': perfil === 1 || perfil === 4 ? 'ARGENTINA' : perfil === 2 ? 'BOLIVIANO' : 'DEL MUNDO'}</h3>
-                    </div>
-                    <div style={{ width:'22vw', height:'20vh', border:'2px solid', marginLeft:'2vw'}}>
-                        <p style={{fontSize:'1.1vw', padding:'10px'}}>
+				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+					<div style={{ width:'30vw', height:'68.6vh', marginTop:'0vh', display:'flex', flexDirection:'column', borderRight:'2px solid'}}>
+
+					
+						<div style={{position:'absolute', marginTop:'2vh', marginLeft:'7vw'}}>
+							<img src={perfil === 2 || perfil === 3 ? hombreperfil : mujerperfil } style={{width:'15vw'}}></img>
+						</div>
+						<div style={{ width:'25vw', height:'28vh', backgroundColor:'#dcdef1', marginLeft:'2.3vw', marginTop:'25vh'}}>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'1vh'}}>Nombre:  </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}}>{perfil === 0 ? 'Juana Chispa' : perfil === 1 ? 'Isabella Espejo': perfil === 2 ? 'Carlos Burbujez' : perfil === 3 ?'Oscar Malabar' : 'Renata Vallejos'}</h3>
+
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh'}} >Email: </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}} >{perfil === 0 ?'juanachispita@gmail.com': perfil === 1 ? 'isabellajimenez@hotmail.com' : perfil === 2 ?'carlosburbujez@gmail.com': perfil === 3 ? 'oscarmalab@gmail.com' : 'renuvallejos@gmail.com'}</h3>
+
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh'}} >Edad: </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}} >{perfil === 0 ? '21 años' : perfil === 1 ? 'Inmortal' : perfil === 2 ?  '28 años': perfil === 3 ? '37 años' : '19 años'}</h3>
+
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh'}} >Nacionalidad: </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}} >{perfil === 0 ?'MEXICANA': perfil === 1 || perfil === 4 ? 'ARGENTINA' : perfil === 2 ? 'BOLIVIANO' : 'DEL MUNDO'}</h3>
+
+						</div>
+					</div>
+					<div style={{width:'33vw', height:'68vh', marginTop:'-70vh', marginLeft:'30vw'}}>
+						<div style={{display:'flex', flexDirection:'column'}}>
+                    <div style={{ width:'30vw', height:'30vh', marginLeft:'2vw', marginTop:'5vh'}}>
+                        <p style={{fontSize:'1.8vw', padding:'10px', textAlign:'center'}}>
                             {
                                 perfil === 0 ?
                                 'Juanita Chispa, destaca por su obsesión desenfrenada por la moda y las prendas lujosas. Su guardarropa rebosa de coloridos trajes tropicales y accesorios llamativos que reflejan su amor por la elegancia extravagante.'
@@ -143,21 +163,20 @@ return (
                             }
                         </p>
                     </div>
-                    <div style={{position:'absolute', marginTop:'-55vh', marginLeft:'27vw'}}>
-                        <img src={perfil === 2 || perfil === 3 ? hombreperfil : mujerperfil } style={{width:'8vw'}}></img>
-                    </div>
-                    <div style={{backgroundColor:'#dcdef1', width:'13vw', height:'30vh', marginLeft:'52vh', marginTop:'-35vh', border:'1px solid'}}>
-                        <p style={{padding:'15px', width:'13vw',textAlign:'center', fontSize:'1vw'}}>
+
+                    <div style={{backgroundColor:'#dcdef1', width:'23vw', height:'25vh', marginLeft:'8vh', marginTop:'-1vh', border:'1px solid'}}>
+                        <p style={{padding:'12px', width:'23vw',textAlign:'center', fontSize:'1.5vw'}}>
                         ¡Gracias por tus datos!. Estos son tus datos modificados para que tu uso en esta web sea mas optimo y todo pueda fluir mejor. Tus verdaderos datos nos aportan un granito de arena para que podamos venderlos y que esta pagina web pueda subsistir.
                         </p>
                     </div>
-                    <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-1vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'24vw'}}>
-									<Boton2  style={{fontSize:'2vw', width:'3vw', height:'3vw'}} onClick={() => navigate(`/enlaces`)}> {'>'} </Boton2>
+					</div>
+					</div>
+					<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-10%', height:'10vh',alignItems:'center', marginLeft:'72%'}}>
+									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => navigate(`/enlaces`)}> {'>'} </Boton2>
 						</div>
                 </ContenedorTerminos>
 				}
 
-			</div>
 		</div>
 );
 }
@@ -176,23 +195,24 @@ const ContenedorTerminos = styled.div`
 
 	border: 2px solid;
 	margin: auto;
-	width: 40%;
-	height: 65%;
+	width: 65%;
+	height: 70%;
 	background: white;
-	border-radius: 1%;
+	border-radius: 3%;
 	box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
 
 	h1 {
-		font-size: 320%;
-		font-weight: 500;
+		font-size: 250%;
+		font-weight: 600;
 		text-align: center;
 		padding-inline: 20%;
 		padding-top:5%
 
 	}
 	h2 {
-		font-size: 150%;
+		font-size: 130%;
 		font-weight: 10;
+		margin-left: 5%;
 		
 	}
 `;
