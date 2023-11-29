@@ -1,14 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
 import { useNavigate } from 'react-router-dom'
+import reinicio from '../assets/general/reinicio.png'
 
-const Home = () => {
-  const [estadoModal1, cambiarEstadoModal1] = useState(0);
+const Home = ({logo}) => {
   const navigate = useNavigate();
-  const [estadoLogo, cambiarEstadoLogo] = useState(0);
   const [continuar, cambiarContinuar] = useState(0);
   const [continuar2, cambiarContinuar2] = useState(0);
   const [hoverBoton, cambiarhoverBoton] = useState(0);
@@ -70,41 +68,37 @@ const Home = () => {
 
 
 return (
-		<div style={{width:'100%', height:'100vh'}}>
 			
-			<div style={{backgroundColor:'#e0dcf4', height:'100vh', width:'100vw', display:'flex', position:'absolute'}}>
-			<div style={{ width:'10vw', marginLeft:'90vw', marginTop:'5vh' }}>
-								<Boton onClick={() => (play(),cambiarEstadoLogo(1))} style={{fontSize:'40px', fontWeight:'1000', letterSpacing:'-3px', width:'3.5vw', paddingLeft:'0.8vw'}}>tc</Boton>
-								<Boton3 onClick={() => (play(),navigate(`/`))} style={{fontSize:'25px', fontWeight:'200', width:'8vw', height:'6vh', marginTop:'75vh', marginLeft:'-3vw'}}>REINICIAR</Boton3>
+			<div >
+          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
 
-			</div>
 				{
 					continuar === 0
 					?
-					<ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+					<ContenedorTerminos style={{position:'absolute', marginLeft:'25%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 					
-					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
+					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px',borderTopRightRadius:'10px'}}>
 						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
-					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'3%', }}>
-						<h1 style={{fontSize:'200%'}}><b>INICIO</b></h1>
-						<h2 style={{marginTop:'5%'}}>
+					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'0%', }}>
+						<h1 style={{fontSize:'160%'}}><b>INICIO</b></h1>
+						<h2 style={{marginTop:'5%', width:'100%', textAlign:'center', marginLeft:'0%'}}>
 							Al acceder a este sitio web, asumimos que <b><u>aceptas</u></b> estos <i>términos y condiciones</i>. <del>No</del> continúes usando el sitio si no estás de acuerdo con todos los <b><i>términos y condiciones</i></b> establecidos en esta página.
 						</h2>
-						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'5vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'3vw'}}>
-									<Boton onMouseOver={()=>cambiarhoverBoton(1)} onMouseOut={()=>cambiarhoverBoton(0)} style={{fontSize:'1vw', width:'10vw', height:'5.8vh'}} onClick={() => (play(),cambiarContinuar(1))}>{hoverBoton === 1 ? 'Continuar':'Salir'} </Boton>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'10vw', height:'6vh'}} onClick={() => (play(),navigate(`/`))}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
+						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'3vw'}}>
+									<Boton onMouseOver={()=>cambiarhoverBoton(1)} onMouseOut={()=>cambiarhoverBoton(0)} style={{fontSize:'1vw', width:'15vw', height:'75%', fontSize:'140%'}} onClick={() => (play(),cambiarContinuar(1))}>{hoverBoton === 1 ? 'Continuar':'Salir'} </Boton>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'15vw', height:'80%', fontSize:'140%', marginRight:'-45%'}} onClick={() => (play(),navigate(`/`))}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>
 				:
-					<ContenedorTerminos style={{position:'absolute', marginLeft:'30%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+				<ContenedorTerminos style={{position:'absolute', marginLeft:'25%', marginTop:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 						
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
 						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
-					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'3%', }}>
-						<h1 style={{fontSize:'200%'}}><b>¿CON HAMBRE...?</b></h1>
+					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'0%', }}>
+						<h1 style={{fontSize:'160%'}}><b>¿CON HAMBRE...?</b></h1>
 						{
 							continuar2 === 0
 							?
@@ -112,39 +106,25 @@ return (
 							Este sitio web utiliza cookies web para personalizar tu experiencia según el tipo de contenido que consumes. Las cookies de esta página se pueden utilizar para ejecutar programas <del>y enviar virus a tu computadora.</del> 						
 						</h2>
 						:
-						<h2 style={{marginTop:'5%'}}>
-						Podemos utilizar cookies para recopilar, almacenar y rastrear tu información  con fines estadísticos o de marketing <del>para obtener más margen de ganancia.</del> 
-						<p style={{width:'25vw', height:'3vh', marginLeft:'4vw', paddingTop:'2vh'}}><i>¡Gracias a las cookies podrás obtener publicidad específica para el consumo específico que precises!</i>		</p>				
-						</h2>
+						<div style={{marginLeft:'6%'}}>
+							<h2 style={{marginTop:'5%'}}>
+							Podemos utilizar cookies para recopilar, almacenar y rastrear tu información  con fines estadísticos o de marketing <del>para obtener más margen de ganancia.</del> 
+							<p style={{width:'25vw', height:'3vh', marginLeft:'4vw', paddingTop:'2vh'}}><i>¡Gracias a las cookies podrás obtener publicidad específica para el consumo específico que precises!</i>		</p>				
+							</h2>
+						</div>
 						}
 
 
-						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'7vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'20vw'}}>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'3vw', height:'3vw'}} onClick={() => (play(), continuar2 === 0 ?cambiarContinuar2(1) : navigate(`/cookies`))}> {'>'} </Boton2>
+						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'5%', height:'10vh',alignItems:'center', marginLeft:'70%'}}>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'22%', height:'90%', fontSize:'200%'}} onClick={() => (play(), continuar2 === 0 ?cambiarContinuar2(1) : navigate(`/cookies`))}> {'>'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>
 				}
 
 
-				<Modal
-					estado={estadoLogo}
-					cambiarEstado={cambiarEstadoLogo}
-					encabezado={(<div style={{display:'flex',flexDirection:'row'}}><b style={{fontSize:'150%'}}>CRÉDITOS</b><Boton onClick={() => (play(),  cambiarEstadoLogo(0))} style={{marginLeft:'95%', marginTop:'1%', borderWidth:0, backgroundColor:'transparent'}}><h3>X</h3></Boton></div>)}
-					
-					>
-						<Contenido style={{backgroundColor:'white', }}>
-							<b style={{width:'70%', marginTop:'5%', marginLeft:'25%', fontSize:'100%', letterSpacing:'0.5px'}}>DISEÑO Y PROPOTIPADO :</b>
-							<u style={{marginTop:'1%'}}>Pedro Segalerba</u>
-							<u>Genaro Gonzalez Cinto</u>
-							<u>Juan Ignacio Gonzalez</u>
-							<u>Gabriela Pardo Rojas</u>
-							<b style={{width:'70%', marginTop:'5%', marginLeft:'40%', fontSize:'100%', letterSpacing:'0.5px'}}>PROGRAMACIÓN :</b>
-							<h4 style={{fontSize:'100%', marginTop:'2%', marginBottom:'5%'}}>Gonzalo Lucero</h4>
-							</Contenido>
-				</Modal> 
 			</div>
-		</div>
+
 );
 }
  
@@ -162,23 +142,24 @@ const ContenedorTerminos = styled.div`
 
 	border: 2px solid;
 	margin: auto;
-	width: 40%;
-	height: 65%;
+	width: 55%;
+	height: 70%;
 	background: white;
-	border-radius: 1%;
+	border-radius: 3%;
 	box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
 
 	h1 {
-		font-size: 320%;
-		font-weight: 500;
+		font-size: 250%;
+		font-weight: 600;
 		text-align: center;
 		padding-inline: 20%;
 		padding-top:5%
 
 	}
 	h2 {
-		font-size: 150%;
+		font-size: 130%;
 		font-weight: 10;
+		margin-left: 5%;
 		
 	}
 `;
@@ -186,7 +167,7 @@ const ContenedorTerminos = styled.div`
 
 
 const Boton = styled.button`
-	width:10vw
+	width:10%
 	display: block;
 	padding: 2% 10%;
 	color: black;
@@ -194,7 +175,8 @@ const Boton = styled.button`
 	background: white;
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
+	font-weight: 300%;
+	font-size:13px;
 	transition: .3s ease all;
 	border: 3px solid;
 
@@ -210,6 +192,7 @@ const Boton2 = styled.button`
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
+	font-size: 200%;
 	transition: .3s ease all;
 	border: 3px solid;
 	border-color: white;

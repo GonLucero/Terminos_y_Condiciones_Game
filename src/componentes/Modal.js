@@ -37,7 +37,7 @@ const Overlay = styled.div`
 `;
 
 const ContenedorModal = styled.div`
-    width: 25%;
+    width: 35vw;
     min-height: 5%;
     background: #dcdef1;
     position: relative;

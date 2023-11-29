@@ -157,23 +157,6 @@ return (
                 </ContenedorTerminos>
 				}
 
-
-				<Modal
-					estado={estadoLogo}
-					cambiarEstado={cambiarEstadoLogo}
-					encabezado={(<div style={{display:'flex',flexDirection:'row'}}><b style={{fontSize:'150%'}}>CRÉDITOS</b><Boton onClick={() => (play(),  cambiarEstadoLogo(0))} style={{marginLeft:'95%', marginTop:'1%', borderWidth:0, backgroundColor:'transparent'}}><h3>X</h3></Boton></div>)}
-					
-					>
-						<Contenido style={{backgroundColor:'white', }}>
-							<b style={{width:'70%', marginTop:'5%', marginLeft:'25%', fontSize:'100%', letterSpacing:'0.5px'}}>DISEÑO Y PROPOTIPADO :</b>
-							<u style={{marginTop:'1%'}}>Pedro Segalerba</u>
-							<u>Genaro Gonzalez Cinto</u>
-							<u>Juan Ignacio Gonzalez</u>
-							<u>Gabriela Pardo Rojas</u>
-							<b style={{width:'70%', marginTop:'5%', marginLeft:'40%', fontSize:'100%', letterSpacing:'0.5px'}}>PROGRAMACIÓN :</b>
-							<h4 style={{fontSize:'100%', marginTop:'2%', marginBottom:'5%'}}>Gonzalo Lucero</h4>
-							</Contenido>
-				</Modal> 
 			</div>
 		</div>
 );
