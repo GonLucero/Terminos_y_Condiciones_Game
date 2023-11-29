@@ -34,6 +34,11 @@ function App() {
     setPlaying(!playing)
   }
 
+  const cambioLogo = () => {
+    cambiarEstadoLogo(1)
+  }
+
+
 useEffect(() => {
   audio.addEventListener('ended', () => {
 	audio.currentTime = 0
@@ -66,14 +71,14 @@ useEffect(() => {
           <img src={tc} alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'90vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),cambiarEstadoLogo(1))} ></img>
           </div>
         <Routes >
-			    <Route exact path="/" element={<Main func={setPlaying} logo={cambiarEstadoLogo}/>} /> 
-          <Route exact path="/home" element={<Home logo={cambiarEstadoLogo}/>}/>
-          <Route exact path="/cookies" element={<Cookies logo={cambiarEstadoLogo}/>}/>
-          <Route exact path="/licencia" element={<Licencia logo={cambiarEstadoLogo}/>}/>
-          <Route exact path="/nodebes" element={<Nodebes logo={cambiarEstadoLogo}/>}/>
-          <Route exact path="/responsabilidad" element={<Responsabilidad logo={cambiarEstadoLogo}/>}/>
-          <Route exact path="/derechos" element={<Derechos logo={cambiarEstadoLogo}/>}/>
-          <Route exact path="/enlaces" element={<Enlaces logo={cambiarEstadoLogo}/>}/>
+			<Route exact path="/" element={<Main func={setPlaying} logo={cambioLogo} />} /> 
+          <Route exact path="/home" element={<Home />}/>
+          <Route exact path="/cookies" element={<Cookies />}/>
+          <Route exact path="/licencia" element={<Licencia/>}/>
+          <Route exact path="/nodebes" element={<Nodebes />}/>
+          <Route exact path="/responsabilidad" element={<Responsabilidad />}/>
+          <Route exact path="/derechos" element={<Derechos />}/>
+          <Route exact path="/enlaces" element={<Enlaces />}/>
 
         </Routes>
         <Modal
@@ -89,7 +94,7 @@ useEffect(() => {
 				<Contenido style={{backgroundColor:'white', }}>
 					<b style={{width:'70%', marginTop:'5%', marginLeft:'5vw', fontSize:'100%', letterSpacing:'0.5px'}}>DISEÑO Y PROPOTIPADO :</b>
 					<a href="https://elsalon.org/u/pedrosegalerba/"><u   style={{marginTop:'1%'}}>Pedro Segalerba</u></a>
-					<a href="https://elsalon.org/u/genarogc/"><u>Genaro Gonzalez Cintoo</u></a>
+					<a href="https://elsalon.org/u/genarogc/"><u>Genaro Gonzalez Cinto</u></a>
 					<a href="https://elsalon.org/u/juanignacio5/ "><u>Juan Ignacio Gonzalez</u></a>
 					<a href="https://elsalon.org/u/gabriela+/ "><u>Gabriela Pardo Rojas</u></a>
 					<b style={{width:'70%', marginTop:'5%', marginLeft:'10vw', fontSize:'100%', letterSpacing:'0.5px'}}>PROGRAMACIÓN :</b>

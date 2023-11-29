@@ -5,7 +5,7 @@ import boopSfx from '../sounds/click.mp3';
 import { useNavigate } from 'react-router-dom'
 import reinicio from '../assets/general/reinicio.png'
 
-const Home = ({logo}) => {
+const Home = () => {
   const navigate = useNavigate();
   const [continuar, cambiarContinuar] = useState(0);
   const [continuar2, cambiarContinuar2] = useState(0);
@@ -97,12 +97,12 @@ return (
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
 						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
-					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'0%', }}>
+					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'3%', }}>
 						<h1 style={{fontSize:'160%'}}><b>¿CON HAMBRE...?</b></h1>
 						{
 							continuar2 === 0
 							?
-							<h2 style={{marginTop:'5%'}}>
+							<h2 style={{marginTop:'10%'}}>
 							Este sitio web utiliza cookies web para personalizar tu experiencia según el tipo de contenido que consumes. Las cookies de esta página se pueden utilizar para ejecutar programas <del>y enviar virus a tu computadora.</del> 						
 						</h2>
 						:
@@ -116,7 +116,7 @@ return (
 
 
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'5%', height:'10vh',alignItems:'center', marginLeft:'70%'}}>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'22%', height:'90%', fontSize:'200%'}} onClick={() => (play(), continuar2 === 0 ?cambiarContinuar2(1) : navigate(`/cookies`))}> {'>'} </Boton2>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'2vw', width:'25%', height:'90%', fontSize:'200%'}} onClick={() => (play(), continuar2 === 0 ?cambiarContinuar2(1) : navigate(`/cookies`))}> {'>'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>

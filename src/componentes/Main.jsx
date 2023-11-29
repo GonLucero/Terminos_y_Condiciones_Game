@@ -4,10 +4,11 @@ import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
 import { useNavigate } from 'react-router-dom'
 import tc from '../assets//general/tc.png'
+import Modal from './Modal';
 
 
-const Main = ({func, logo}) => {
-  const [estadoModal1, cambiarEstadoModal1] = useState(0);
+const Main = ({func}) => {
+	const [estadoLogo, cambiarEstadoLogo] = useState(0);
   const [play] = useSound(boopSfx);
   const navigate = useNavigate();
 
@@ -21,28 +22,47 @@ const Main = ({func, logo}) => {
 <div style={{backgroundColor:'white', height:'100vh', width:'100vw', display:'flex', position:'absolute'}}>
 			<ContenedorTerminos style={{ position:'absolute', marginLeft:'20vw'}}>
             <div style={{display:'flex', justifyContent:'flex-end', width:'7vw', marginTop:'15vh',alignItems:'flex-end', marginLeft:'51vw' }}>
-					<img src={tc} alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'2vw',cursor: 'pointer'}} onClick={()=>(play(),logo(1))} ></img>
+					<img src={tc} alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'2vw',cursor: 'pointer'}} onClick={()=>(play(),cambiarEstadoLogo(1))} ></img>
 			</div>
-				<h1 style={{fontWeight:'500', marginLeft:'13vw', marginTop:'-10vh'}}>TÉRMINOS Y CONDICIONES</h1>
+				<h1 style={{fontWeight:'500', marginLeft:'12vw', marginTop:'-7vh'}}>TÉRMINOS Y CONDICIONES</h1>
 				<div style={{height:'55%', width:'43vw', alignSelf:'center', marginLeft:'12vw', marginTop:'5vh'}}>
 				<h2 >
 					<b>“ELESPACIO.COM”</b> quiere que aceptes todos los <u>términos y condiciones</u>.
 					<p>Tu misión final es poder acceder a</p> <b>“ELESPACIO.COM”</b> pasando cada uno de los niveles que se te presentaran. 
 				</h2>
-				<h2 style={{fontStyle:'italic', marginTop:'4vh', marginLeft:'2vw'}}>Esto es un contrato, leelo bien.</h2>
+				<h2 style={{fontStyle:'italic', marginTop:'7vh', marginLeft:'2vw'}}>Esto es un contrato, leelo bien.</h2>
 				<div style={{backgroundColor:'#dcdef1', width:'45vw', 	border: '3px solid', marginLeft:'-2vw', marginTop:'3vh', height:'15vh' }}>
-					<h4 style={{	fontSize:'200%', width:'40vw', marginLeft:'4vw', marginTop:'1vh'}}>
+					<h4 style={{	fontSize:'200%', width:'40vw', marginLeft:'4vw', marginTop:'2vh'}}>
 					Ten cuidado... Hay cosas que estan fuera de control
 					</h4>
 				</div>
 				<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'45vw', marginLeft:'-2vw', marginTop:'6vh'}}>
-						<Boton2 onClick={() => (func(true), navigate(`/home`))} style={{fontSize:'25px'}}>JUGAR</Boton2>
+						<Boton2 onClick={() => (play(),func(true), navigate(`/home`))} style={{fontSize:'25px'}}>JUGAR</Boton2>
                 </div>
 				</div>
 
 
 			</ContenedorTerminos>
-
+			<Modal
+					estado={estadoLogo}
+					cambiarEstado={cambiarEstadoLogo}
+					encabezado={(<div style={{display:'flex',flexDirection:'row'}}><b style={{fontSize:'150%', marginLeft:'7.3vw', marginTop:'0.1vh'}}>CRÉDITOS</b>
+					<Boton onClick={() => (play(),  cambiarEstadoLogo(0))} style={{marginLeft:'6vw', marginTop:'1%', borderWidth:0, backgroundColor:'transparent'}}>
+						<h3>X</h3>
+					</Boton>
+					</div>)}
+					
+					>
+				<Contenido style={{backgroundColor:'white', }}>
+					<b style={{width:'70%', marginTop:'5%', marginLeft:'5vw', fontSize:'100%', letterSpacing:'0.5px'}}>DISEÑO Y PROPOTIPADO :</b>
+					<a href="https://elsalon.org/u/pedrosegalerba/"><u   style={{marginTop:'1%'}}>Pedro Segalerba</u></a>
+					<a href="https://elsalon.org/u/genarogc/"><u>Genaro Gonzalez Cinto</u></a>
+					<a href="https://elsalon.org/u/juanignacio5/ "><u>Juan Ignacio Gonzalez</u></a>
+					<a href="https://elsalon.org/u/gabriela+/ "><u>Gabriela Pardo Rojas</u></a>
+					<b style={{width:'70%', marginTop:'5%', marginLeft:'10vw', fontSize:'100%', letterSpacing:'0.5px'}}>PROGRAMACIÓN :</b>
+					<a href="https://gonzalo-lucero.vercel.app/"><h4 style={{fontSize:'100%', marginTop:'2%', marginBottom:'5%'}}>Gonzalo Lucero</h4></a>
+				</Contenido>
+			</Modal> 
 
 			
 
