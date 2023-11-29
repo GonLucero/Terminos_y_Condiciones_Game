@@ -20,7 +20,7 @@ const Main = ({func}) => {
 		<div style={{width:'100%', height:'100%',position:'fixed', zIndex:'100'}}>
 
 <div style={{backgroundColor:'white', height:'100vh', width:'100vw', display:'flex', position:'absolute'}}>
-			<ContenedorTerminos style={{ position:'absolute', marginLeft:'20vw'}}>
+			<ContenedorTerminos style={{ position:'absolute', marginLeft:'19.2vw'}}>
             <div style={{display:'flex', justifyContent:'flex-end', width:'7vw', marginTop:'15vh',alignItems:'flex-end', marginLeft:'51vw' }}>
 					<img src={tc} alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'2vw',cursor: 'pointer'}} onClick={()=>(play(),cambiarEstadoLogo(1))} ></img>
 			</div>
