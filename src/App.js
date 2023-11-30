@@ -96,7 +96,7 @@ useEffect(() => {
 					<a href="https://elsalon.org/u/pedrosegalerba/"><u   style={{marginTop:'1%'}}>Pedro Segalerba</u></a>
 					<a href="https://elsalon.org/u/genarogc/"><u>Genaro Gonzalez Cinto</u></a>
 					<a href="https://elsalon.org/u/juanignacio5/ "><u>Juan Ignacio Gonzalez</u></a>
-					<a href="https://elsalon.org/u/gabriela+/ "><u>Gabriela Pardo Rojas</u></a>
+					<a href="https://gabrielapardoroj.myportfolio.com/ "><u>Gabriela Pardo Rojas</u></a>
 					<b style={{width:'70%', marginTop:'5%', marginLeft:'10vw', fontSize:'100%', letterSpacing:'0.5px'}}>PROGRAMACIÓN :</b>
 					<a href="https://gonzalo-lucero.vercel.app/"><h4 style={{fontSize:'100%', marginTop:'2%', marginBottom:'5%'}}>Gonzalo Lucero</h4></a>
 				</Contenido>

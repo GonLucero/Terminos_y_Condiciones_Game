@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom'
 import mujerperfil from '../assets/mujerperfil.png'
 import hombreperfil from '../assets/hombreperfil.png'
 import reinicio from '../assets/general/reinicio.png'
+import { TextField } from '@mui/material';
+import { MuiKeyboard } from '@autosys/react-mui-keyboard';
+
 
 
 const Derechos = () => {
@@ -19,6 +22,7 @@ const Derechos = () => {
   const [inputValue4, setInputValue4] = useState('');
   const [perfil, cambiarPerfil] = useState(Math.floor(Math.random() * 5));
   const [play] = useSound(boopSfx);
+  const [keyCode, setKeyCode] = useState([]);
 
   const handleInputChange = ( e ) => {
     setInputValue( e.target.value );
@@ -32,6 +36,69 @@ const handleInputChange3 = ( e ) => {
 const handleInputChange4 = ( e ) => {
     setInputValue4( e.target.value );
 }
+
+const [checked, setChecked] = useState(false);
+const [inputFocused, setInputFocused] = useState(0);
+  const [inputValues, setInputValues] = useState('');
+
+  const handleUrlChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleChange = () => {
+    setChecked((prev) => !prev);
+  };
+
+const numbers = [
+	'1',
+	'2',
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+	'0',
+	'-',
+	'.',
+	',',
+	'?',
+	'!',
+  ];
+
+const englishButtons = [
+	'q',
+	'w',
+	'e',
+	'r',
+	't',
+	'y',
+	'u',
+	'i',
+	'o',
+	'p',
+	'a',
+	's',
+	'd',
+	'f',
+	'g',
+	'h',
+	'j',
+	'k',
+	'l',
+	'z',
+	'x',
+	'c',
+	'v',
+	'b',
+	'n',
+	'm',
+	'.',
+	',',
+	'@',
+	'!',
+  ];
 
 
 return (
@@ -57,14 +124,15 @@ return (
 				</ContenedorTerminos>
 				:
                 continuar2 === 0 ?
-				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-				<div style={{marginTop:'6vh'}}>
-                        <b><u style={{fontSize:'3vw', marginLeft:'17vw'}}>INGRESÁ TUS DATOS</u></b>
+				<ContenedorTerminos style={{position:'absolute', marginLeft:'10%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px', width:'80vw'}}>
+				<div style={{marginTop:'4vh'}}>
+                        <b><u style={{fontSize:'3vw', marginLeft:'24vw'}}>INGRESÁ TUS DATOS</u></b>
                         </div>
-						<div style={{display:'flex', flexDirection:'row', marginTop:'13%'}}>
-                        <div style={{width:'28vw', marginLeft:'4vw', justifyContent:'center', marginTop:'2%'}}>    
+						<div style={{display:'flex', flexDirection:'row', marginTop:'1%'}}>
+                        <div style={{width:'28vw', marginLeft:'11vw', justifyContent:'center', marginTop:'2%'}}>    
                             <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Nombre:</h3>                    
                         <input 
+						onFocus={() => (setChecked(true),setInputFocused(1))}
                         type="text" 
                         value={ inputValue } 
                         onChange={ handleInputChange } 
@@ -77,6 +145,8 @@ return (
                         <div style={{width:'28vw', marginLeft:'4vw', justifyContent:'center', marginTop:'2%'}}>    
                             <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Email:</h3>                    
                         <input 
+						onFocus={() => (setChecked(true),setInputFocused(2))}
+
                         type="text" 
                         value={ inputValue2 } 
                         onChange={ handleInputChange2 } 
@@ -88,9 +158,11 @@ return (
 						</div>
 						<div style={{display:'flex', flexDirection:'row'}}>
 
-                        <div style={{ width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
+                        <div style={{ width:'28vw', marginTop:'5vh', marginLeft:'11vw'}}>    
                             <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Nacionalidad:</h3>                    
                         <input 
+						onFocus={() => (setChecked(true),setInputFocused(3))}
+
                         type="text" 
                         value={ inputValue4 } 
                         onChange={ handleInputChange4 } 
@@ -103,6 +175,7 @@ return (
 						<div style={{ width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
                             <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Edad:</h3>                    
                         <input 
+						onFocus={() => (setChecked(true),setInputFocused(4))}
                         type="text" 
                         value={ inputValue3 } 
                         onChange={ handleInputChange3 } 
@@ -115,9 +188,34 @@ return (
                         <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
 
                        </div>
-					   <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'10%', height:'10vh',alignItems:'center', marginLeft:'72%'}}>
-                       	<Boton2  disabled={inputValue3 === ''} style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={()=>cambiarContinuar2(1)}> {'>'} </Boton2>
-					   </div>
+						<div style={{marginLeft:'6%', marginTop:'3%'}}>
+					   <MuiKeyboard
+						
+						slide
+						direction="up"
+						checked={checked}
+						setInputValue={inputFocused === 1 ? setInputValue : inputFocused === 2 ? setInputValue2 : inputFocused === 3 ? setInputValue4 : inputFocused === 4 ? setInputValue3 : null}
+						numbers={numbers}
+						firstLanguage={englishButtons}
+						secondLangLabel="EN"
+						firstLangLabel="RU"
+						keyboardWidth={'100%'}
+						
+						buttonSize="medium"
+						labelLangButton
+						reverseButton
+						sx={{ display: 'flex' }}
+						/>
+						</div>
+						{
+						inputValue3 != '' ?
+					   <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-60%', height:'10vh',alignItems:'center', marginLeft:'77%'}}>
+					   <Boton2  disabled={inputValue3 === ''} style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={()=>cambiarContinuar2(1)}> {'>'} </Boton2>
+				   		</div>
+						:
+						null
+						}
+
 				</ContenedorTerminos>
                 :
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
@@ -297,3 +395,4 @@ const Contenido = styled.div`
 		border-radius: 3px;
 	}
 `;
+
