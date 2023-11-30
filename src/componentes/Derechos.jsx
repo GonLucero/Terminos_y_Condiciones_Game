@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
+import boopSfx3 from '../sounds/reiniciar.mp3';
 import { useNavigate } from 'react-router-dom'
 import mujerperfil from '../assets/mujerperfil.png'
 import hombreperfil from '../assets/hombreperfil.png'
@@ -22,6 +23,7 @@ const Derechos = () => {
   const [inputValue4, setInputValue4] = useState('');
   const [perfil, cambiarPerfil] = useState(Math.floor(Math.random() * 5));
   const [play] = useSound(boopSfx);
+  const [play3] = useSound(boopSfx3);
   const [keyCode, setKeyCode] = useState([]);
 
   const handleInputChange = ( e ) => {
@@ -103,7 +105,7 @@ const englishButtons = [
 
 return (
 		<div style={{width:'100%', height:'100vh'}}>
-					          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+					          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play3(),navigate(`/`))} ></img>
 	
 				{
 					continuar === 0

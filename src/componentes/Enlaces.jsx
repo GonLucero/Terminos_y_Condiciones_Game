@@ -3,6 +3,9 @@ import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
+import boopSfx2 from '../sounds/boton_dos.mp3';
+import boopSfx3 from '../sounds/reiniciar.mp3';
+import boopSfx6 from '../sounds/enlace-engañoso.mp3';
 import { useNavigate } from 'react-router-dom'
 import reinicio from '../assets/general/reinicio.png'
 import puz1 from '../assets/puzzle/1.png'
@@ -31,6 +34,13 @@ const Enlaces = () => {
   const [imagen, setImagen] = useState(0);
   const [coords, setCoords] = useState({x: 0, y: 0});
   const [play] = useSound(boopSfx);
+  const [play2] = useSound(boopSfx2);
+  const [play3] = useSound(boopSfx3);
+  const [play6] = useSound(boopSfx6);
+
+  const [checked, setChecked] = useState(false);
+  const [inputFocused, setInputFocused] = useState(0);
+  const [inputValue, setInputValue] = useState('');
 
     useEffect(() => {
     const handleWindowMouseMove = event => {
@@ -83,9 +93,7 @@ const Enlaces = () => {
   }, [coords]);
 
 
-  const [checked, setChecked] = useState(false);
-const [inputFocused, setInputFocused] = useState(0);
-  const [inputValues, setInputValues] = useState('');
+
 
   const handleUrlChange = (event) => {
     setInputValue(event.target.value);
@@ -146,16 +154,21 @@ const englishButtons = [
 	'!',
   ];
 
-  const [inputValue, setInputValue] = useState('');
+
 
   const handleInputChange = ( e ) => {
     setInputValue( e.target.value );
 }
 
+const codigomal = ( ) => {
+  setInputValue('')
+  cambiarContinuar3(0)
+}
+
 
 return (
 		<div style={{width:'100%', height:'100vh'}}>
-			<img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+			<img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play3(),navigate(`/`))} ></img>
 
 				{
 					continuar === 0
@@ -187,22 +200,22 @@ return (
                             <a style={{display:'flex', marginLeft:'15vw', fontSize:'110%'}}>Identifica los enlaces engañosos para avanzar.</a>
                         </div>
                         <div style={{display:'flex', flexDirection:'row', marginTop:'1vh', marginLeft:'3.5%'}}>
-                        <div onClick={()=>setbox(1)} style={{cursor:'pointer', width:'27vw', border:box === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
+                        <div onClick={()=> (play6(),setbox(1))} style={{cursor:'pointer', width:'27vw', border:box === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
                             <h2 style={{width:'25vw', fontSize:'2vw', textAlign:'center', marginLeft:'1.5%', marginTop:'1.3vh'}}>{box === 0 ? <u>¡Desbloquea el potencial oculto de tu computadora!</u> : <del>¡Desbloquea el potencial oculto de tu computadora!</del>} </h2>
                         </div>
-                        <div onClick={()=>setbox2(1)} style={{cursor:'pointer',width:'27vw', border:box2 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
+                        <div onClick={()=>(play2(),setbox2(1))} style={{cursor:'pointer',width:'27vw', border:box2 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
                             <h2 style={{width:'25vw', fontSize:'2vw', textAlign:'center', marginLeft:'1.5%', marginTop:'1.3vh'}}>{box2 === 0 ?<u>CINE: el top 15 de las mejores películas de terror</u> : <u style={{color:'lightgrey'}}>Este enlace no es engañoso</u>}</h2>
                         </div>
                         </div>
                         <div style={{display:'flex', flexDirection:'row', marginTop:'2vh', marginLeft:'3.5%'}}>
-                        <div onClick={()=>setbox3(1)} style={{cursor:'pointer',width:'27vw', border:box3 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
+                        <div onClick={()=>(play2(),setbox3(1))} style={{cursor:'pointer',width:'27vw', border:box3 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
                             <h2 style={{width:'25vw', fontSize:'2vw', textAlign:'center', marginLeft:'1.5%', marginTop:'0.5vh'}}>{box3 === 0 ?<u>Viernes con alertas: el clima en la ciudad de Buenos Aires</u>: <u style={{color:'lightgrey'}}>Este enlace no es engañoso</u>}</h2>
                         </div>
-                        <div  onClick={()=>setbox4(1)} style={{cursor:'pointer',width:'27vw', border:box4 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
+                        <div  onClick={()=>(play6(),setbox4(1))} style={{cursor:'pointer',width:'27vw', border:box4 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
                             <h2 style={{width:'25vw', fontSize:'2vw', textAlign:'center', marginLeft:'1.5%', marginTop:'0.5vh'}}>{box4 === 0 ? <u>¿Cuánto vale mi coche? Eche un vistazo aquí (quizás se sorprenda)</u> : <del>¿Cuánto vale mi coche? Eche un vistazo aquí (quizás se sorprenda)</del>}</h2>
                         </div>
                         </div>
-                        <div  onClick={()=>setbox5(1)} style={{cursor:'pointer',width:'27vw', border:box5 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'18.5vw'}}>
+                        <div  onClick={()=>(play6(),setbox5(1))} style={{cursor:'pointer',width:'27vw', border:box5 === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'18.5vw'}}>
                             <h2 style={{width:'25vw', fontSize:'2vw', textAlign:'center', marginLeft:'1.5%', marginTop:'0.5vh'}}>{box5 === 0 ? <u>¿Lo recuerdas? Respira profundo antes de ver como luce ahora</u> : <del>¿Lo recuerdas? Respira profundo antes de ver como luce ahora</del>}</h2>
                         </div>
                         {
@@ -245,19 +258,19 @@ return (
           :
           continuar4 === 0
           ?
-          <ContenedorTerminos style={{position:'absolute', marginLeft:'10%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px', width:'80vw'}}>
-          <div style={{marginTop:'4vh'}}>
-                          <b style={{fontSize:'3vw', marginLeft:'15vw'}}>EXENCIÓN DE RESPONSABILIDAD</b>
+          <ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
+          <div style={{marginTop:'2vh', width:'100%'}}>
+                          <h1 style={{fontSize:'4vw', textAlign:'center'}}>EXENCIÓN DE RESPONSABILIDAD</h1>
                           </div>
               <div style={{display:'flex', flexDirection:'row', marginTop:'1%'}}>
-                          <div style={{width:'38vw', marginLeft:'16vw', justifyContent:'center', marginTop:'2%'}}>    
-                              <h3 style={{alignSelf:'center', fontSize:'2.8vw', marginLeft:'12vw'}}>Escriba el código:</h3>                    
+                          <div style={{width:'38vw', marginLeft:'10vw', justifyContent:'center', marginTop:'4%'}}>    
+                              <h3 style={{alignSelf:'center', fontSize:'3vw', marginLeft:'11vw'}}>Escriba el código:</h3>                    
                           <input 
               onFocus={() => (setChecked(true),setInputFocused(1))}
                           type="text" 
                           value={ inputValue } 
                           onChange={ handleInputChange } 
-                          style={{height:'10vh', width:'45vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'15vw', fontSize:'3vw', marginTop:'3%'}}
+                          style={{height:'10vh', width:'45vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'14vw', fontSize:'3vw', marginTop:'3%'}}
   
                           className="SearchbarInput"
                            />
@@ -269,7 +282,7 @@ return (
                           <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
   
                          </div>
-              <div style={{marginLeft:'7%', marginTop:'3%'}}>
+              <div style={{marginLeft:'7%', marginTop:'5%'}}>
                <MuiKeyboard
               
               slide
@@ -277,7 +290,6 @@ return (
               checked={checked}
               setInputValue={setInputValue }
               numbers={numbers}
-              firstLanguage={englishButtons}
               secondLangLabel="EN"
               firstLangLabel="RU"
               keyboardWidth={'100%'}
@@ -290,8 +302,8 @@ return (
               </div>
               {
               inputValue != '' ?
-               <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-50%', height:'10vh',alignItems:'center', marginLeft:'77%'}}>
-               <Boton2  disabled={inputValue === ''} style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={()=>cambiarContinuar4(1)}> {'>'} </Boton2>
+               <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-70%', height:'10vh',alignItems:'center', marginLeft:'72%'}}>
+               <Boton2  disabled={inputValue === ''} style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={()=> {inputValue === '1505016105' ? cambiarContinuar4(1) : codigomal()} }> {'>'} </Boton2>
                  </div>
               :
               null
@@ -312,23 +324,7 @@ return (
     </ContenedorTerminos>
 
 
-          
-                /* <h1 style={{fontSize:'1.8vw', width:'50vw', marginLeft:'-5vw'}}><b>EXENCIÓN DE RESPONSABILIDAD</b></h1>
-                <div style={{backgroundColor:'#dcdef1', width:'15vw', height:'4vh', marginLeft:'12.5vw',marginTop:'22vh'}}>
-                    <h2 style={{paddingTop:'1vh', paddingLeft:'1.5vw', fontSize:'0.9vw'}}>Lee el texto para poder seguir</h2>
-                </div>
-  
-                <img src={puz1} style={{width:'10vw', position:'fixed', marginTop:'-22vh', marginLeft:'4vw', visibility:imagen != 1 ? 'hidden' : 'visible'}}></img>
-                <img src={puz2} style={{width:'8.8vw', position:'fixed', marginTop:'-21.8vh', marginLeft:'14vw',visibility:imagen != 2 ? 'hidden' : 'visible'}}></img>
-                <img src={puz3} style={{width:'9.5vw', position:'fixed', marginTop:'-21.8vh', marginLeft:'23vw', visibility:imagen = 3 ? 'hidden' : 'visible'}}></img>
-                <img src={puz4} style={{width:'5vw', position:'fixed', marginTop:'-21.8vh', marginLeft:'32.7vw', visibility:imagen != 4 ? 'hidden' : 'visible'}}></img>
-                <img src={puz5} style={{width:'12vw', position:'fixed', marginTop:'-13vh', marginLeft:'4vw', visibility:imagen != 5 ? 'hidden' : 'visible'}}></img>
-                <img src={puz6} style={{width:'11vw', position:'fixed', marginTop:'-13vh', marginLeft:'16vw',visibility:imagen != 6 ? 'hidden' : 'visible'}}></img>
-                <img src={puz7} style={{width:'9vw', position:'fixed', marginTop:'-13vh', marginLeft:'27vw', visibility:imagen != 7 ? 'hidden' : 'visible'}}></img>
-                <img src={puz8} style={{width:'11vw', position:'fixed', marginTop:'-9vh', marginLeft:'4vw', visibility:imagen != 8 ? 'hidden' : 'visible'}}></img>
-                <img src={puz9} style={{width:'9vw', position:'fixed', marginTop:'-9vh', marginLeft:'15vw', visibility:imagen != 9 ? 'hidden' : 'visible'}}></img>
-
-                        {/* <p style={{marginTop:'250PX'}}>x:{coords.x}, {coords.y}</p> */}
+     }
 
 				
 		</div>

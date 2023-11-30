@@ -3,6 +3,8 @@ import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
+import boopSfx2 from '../sounds/boton_dos.mp3';
+import boopSfx3 from '../sounds/reiniciar.mp3';
 import { useNavigate } from 'react-router-dom'
 import imagen1 from '../assets/imagen1.png'
 import imagen11 from '../assets/imagen11.png'
@@ -26,13 +28,15 @@ const Responsabilidad = () => {
   const [continuar2, cambiarContinuar2] = useState(0);
   const [estado_imagen, cambiarestado_imagen] = useState(0);
   const [play] = useSound(boopSfx);
+  const [play2] = useSound(boopSfx2);
+  const [play3] = useSound(boopSfx3);
 
   console.log('oco',continuar2)
 
 
 return (
 		<div style={{width:'100%', height:'100vh'}}>
-		<img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+		<img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play3(),navigate(`/`))} ></img>
 
 			
 				{
@@ -58,17 +62,17 @@ return (
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 				<h2 style={{width:'50vw', marginLeft:'6vw', marginTop:'4vh', textAlign:'center'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
                         <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw', marginTop:'3vh'}}>
-							<img onClick={()=>cambiarestado_imagen(1)} src={estado_imagen != 1 ? imagen1 : imagen11} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
+							<img onClick={()=>(play2(),cambiarestado_imagen(1))} src={estado_imagen != 1 ? imagen1 : imagen11} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
 							<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw', visibility:estado_imagen != 1 ? 'visible' : 'hidden'}} ></img>
 
-							<img onClick={()=>cambiarestado_imagen(2)} src={estado_imagen != 2 ? imagen2 : imagen22} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'30vw'}} ></img>
+							<img onClick={()=>(play2(),cambiarestado_imagen(2))} src={estado_imagen != 2 ? imagen2 : imagen22} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'30vw'}} ></img>
 							<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'36.5vw', visibility:estado_imagen != 2 ? 'visible' : 'hidden'}} ></img>
                         </div>
                         <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw'}}>
-							<img onClick={()=>cambiarestado_imagen(3)} src={estado_imagen != 3 ? imagen3 : imagen33} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'2vw'}} ></img>
+							<img onClick={()=>(play2(),cambiarestado_imagen(3))} src={estado_imagen != 3 ? imagen3 : imagen33} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'2vw'}} ></img>
 							<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'8.5vw', visibility:estado_imagen != 3 ? 'visible' : 'hidden'}}></img>
 							<div  >
-							<img onClick={()=>cambiarContinuar2(1)} src={imagen4} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'30vw'}} ></img>
+							<img onClick={()=>(play(),cambiarContinuar2(1))} src={imagen4} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'30vw'}} ></img>
 							</div>
 							<img  src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'36.5vw'}} ></img>
                         </div>
@@ -78,17 +82,17 @@ return (
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 				<h2 style={{width:'50vw', marginLeft:'6vw', marginTop:'4vh', textAlign:'center'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
                 <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw', marginTop:'3vh'}}>
-					<img src={imagen5} onClick={()=> navigate(`/derechos`)} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
+					<img src={imagen5} onClick={()=> (play(),navigate(`/derechos`))} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
 					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw'}} ></img>
 
-					<img onClick={()=>cambiarestado_imagen(6)} src={estado_imagen != 6 ? imagen6 : imagen22} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'30vw'}} ></img>
+					<img onClick={()=>(play2(),cambiarestado_imagen(6))} src={estado_imagen != 6 ? imagen6 : imagen22} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'30vw'}} ></img>
 					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'36.5vw', visibility:estado_imagen != 6 ? 'visible' : 'hidden'}} ></img>
                 </div>
                 <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw'}}>
-					<img onClick={()=>cambiarestado_imagen(7)} src={estado_imagen != 7 ? imagen7 : imagen11} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'2vw'}} ></img>
+					<img onClick={()=>(play2(),cambiarestado_imagen(7))} src={estado_imagen != 7 ? imagen7 : imagen11} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'2vw'}} ></img>
 					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'8.5vw', visibility:estado_imagen != 7 ? 'visible' : 'hidden'}} ></img>
 
-					<img onClick={()=>cambiarestado_imagen(8)} src={estado_imagen != 8 ? imagen8 : imagen33} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'30vw'}} ></img>
+					<img onClick={()=>(play2(),cambiarestado_imagen(8))} src={estado_imagen != 8 ? imagen8 : imagen33} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'30vw'}} ></img>
 					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'36.5vw', visibility:estado_imagen != 8 ? 'visible' : 'hidden'}} ></img>
                 </div>
         </ContenedorTerminos>

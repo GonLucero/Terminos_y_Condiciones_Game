@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
+import boopSfx2 from '../sounds/boton_dos.mp3';
+import boopSfx3 from '../sounds/reiniciar.mp3';
 import { useNavigate } from 'react-router-dom'
 import reinicio from '../assets/general/reinicio.png'
 
@@ -13,7 +15,8 @@ const Home = () => {
   const [hoverBoton2, cambiarhoverBoton2] = useState(0);
 
   const [play] = useSound(boopSfx);
-  
+  const [play2] = useSound(boopSfx2);
+  const [play3] = useSound(boopSfx3);
 
 //   console.log('coord',coords)
   
@@ -70,7 +73,7 @@ const Home = () => {
 return (
 			
 			<div >
-          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play3(),navigate(`/`))} ></img>
 
 				{
 					continuar === 0
@@ -87,7 +90,7 @@ return (
 						</h2>
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'3vw'}}>
 									<Boton onMouseOver={()=>cambiarhoverBoton(1)} onMouseOut={()=>cambiarhoverBoton(0)} style={{fontSize:'1vw', width:'15vw', height:'75%', fontSize:'140%'}} onClick={() => (play(),cambiarContinuar(1))}>{hoverBoton === 1 ? 'Continuar':'Salir'} </Boton>
-									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'15vw', height:'80%', fontSize:'140%', marginRight:'-85%'}} onClick={() => (play(),navigate(`/`))}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
+									<Boton2 onMouseOver={()=>cambiarhoverBoton2(1)} onMouseOut={()=>cambiarhoverBoton2(0)} style={{fontSize:'1vw', width:'15vw', height:'80%', fontSize:'140%', marginRight:'-85%'}} onClick={() => (play2(),navigate(`/`))}>{hoverBoton2 === 0 ? 'Continuar':'Salir'} </Boton2>
 						</div>
 					</div>
 				</ContenedorTerminos>

@@ -3,6 +3,8 @@ import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
+import boopSfx2 from '../sounds/boton_dos.mp3';
+import boopSfx3 from '../sounds/reiniciar.mp3';
 import { useNavigate } from 'react-router-dom'
 import reinicio from '../assets/general/reinicio.png'
 
@@ -18,7 +20,8 @@ const Home = () => {
 
 
   const [play] = useSound(boopSfx);
-
+  const [play2] = useSound(boopSfx2);
+  const [play3] = useSound(boopSfx3);
     
     const refreshPage = () => {
         window.location.reload(false)
@@ -27,7 +30,7 @@ const Home = () => {
 
 return (
 		<div style={{width:'100%', height:'100vh'}}>
-        <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+        <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play3(),navigate(`/`))} ></img>
 
 				{
 					continuar === 0
@@ -56,11 +59,11 @@ return (
                         <div style={{marginLeft:'8vw'}}>
                             <div style={{display:'flex', flexDirection:'row'}}>
                                 <Boton3 onClick={() => (play(),cambiarContinuar2(1))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Copiar material de esta web</Boton3>
-                                <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(0))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh', marginTop:'10vh', marginLeft:'4vw'}}>Compartir contenido obsceno</Boton3>
+                                <Boton3 onClick={() => (play2(),cambiarEstadoModal2(1),cambiarEstadoModalValor(0))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh', marginTop:'10vh', marginLeft:'4vw'}}>Compartir contenido obsceno</Boton3>
                             </div>
                             <div style={{display:'flex', flexDirection:'row'}}>
-                                <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(1))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw',padding:'2px', marginTop:'10vh', marginLeft:'4vw', height:'9vh'}}>Causar molestias o daños a otros usuarios a través de la web</Boton3>
-                                <Boton3 onClick={() => (play(), cambiarEstadoModal2(1),cambiarEstadoModalValor(2))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh', marginTop:'10vh', marginLeft:'4vw'}}>Proporcionar información falsa</Boton3>
+                                <Boton3 onClick={() => (play2(),cambiarEstadoModal2(1),cambiarEstadoModalValor(1))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw',padding:'2px', marginTop:'10vh', marginLeft:'4vw', height:'9vh'}}>Causar molestias o daños a otros usuarios a través de la web</Boton3>
+                                <Boton3 onClick={() => (play2(), cambiarEstadoModal2(1),cambiarEstadoModalValor(2))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh', marginTop:'10vh', marginLeft:'4vw'}}>Proporcionar información falsa</Boton3>
                             </div>
                             
                         </div>
@@ -74,12 +77,12 @@ return (
                                     </div>
                                     <div style={{marginLeft:'8vw'}}>
                                         <div style={{display:'flex', flexDirection:'row'}}>
-                                            <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(3))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Alquilar o vender contenido propio de esta web</Boton3>
-                                            <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(4))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Intentar acceder o recopilar datos de manera no autorizada</Boton3>
+                                            <Boton3 onClick={() => (play2(),cambiarEstadoModal2(1),cambiarEstadoModalValor(3))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Alquilar o vender contenido propio de esta web</Boton3>
+                                            <Boton3 onClick={() => (play2(),cambiarEstadoModal2(1),cambiarEstadoModalValor(4))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Intentar acceder o recopilar datos de manera no autorizada</Boton3>
                                         </div>
                                         <div style={{display:'flex', flexDirection:'row'}}>
                                             <Boton3 onClick={() => (play(),cambiarContinuar3(1))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Proporcionar informacion falsa</Boton3>
-                                            <Boton3 onClick={() => (play(), cambiarEstadoModal2(1),cambiarEstadoModalValor(5))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Tener contacto con nuestro equipo de asistencia</Boton3>
+                                            <Boton3 onClick={() => (play2(), cambiarEstadoModal2(1),cambiarEstadoModalValor(5))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Tener contacto con nuestro equipo de asistencia</Boton3>
                                         </div>
                                         
                                     </div>
@@ -92,12 +95,12 @@ return (
                             </div>
                             <div style={{marginLeft:'8vw'}}>
                                 <div style={{display:'flex', flexDirection:'row'}}>
-                                    <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(6))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Violar la privacidad de otros usuarios</Boton3>
+                                    <Boton3 onClick={() => (play2(),cambiarEstadoModal2(1),cambiarEstadoModalValor(6))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Violar la privacidad de otros usuarios</Boton3>
                                     <Boton3 onClick={() => (play(), navigate(`/responsabilidad`))} style={{fontSize:'1.6vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Intentar acceder o recopilar datos de manera no autorizada</Boton3>
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row'}}>
-                                    <Boton3 onClick={() => (play(),cambiarEstadoModal2(1),cambiarEstadoModalValor(7))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Agredir o insultar a otros usuarios</Boton3>
-                                    <Boton3 onClick={() => (play(), cambiarEstadoModal2(1),cambiarEstadoModalValor(8))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Compartir contenido obsceno</Boton3>
+                                    <Boton3 onClick={() => (play2(),cambiarEstadoModal2(1),cambiarEstadoModalValor(7))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Agredir o insultar a otros usuarios</Boton3>
+                                    <Boton3 onClick={() => (play2(), cambiarEstadoModal2(1),cambiarEstadoModalValor(8))} style={{fontSize:'1.7vw', fontWeight:'100', width:'18vw', height:'9vh',padding:'2px', marginTop:'10vh', marginLeft:'4vw'}}>Compartir contenido obsceno</Boton3>
                                 </div>
                                 
                             </div>

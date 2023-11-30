@@ -3,6 +3,9 @@ import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
+import boopSfx3 from '../sounds/reiniciar.mp3';
+import boopSfx4 from '../sounds/luna.mp3';
+import boopSfx5 from '../sounds/galletita.mp3';
 import { useNavigate } from 'react-router-dom'
 import luna from '../assets/luna.png'
 import cookie from '../assets/cookie.png'
@@ -40,46 +43,44 @@ const Home = () => {
 
 
   const [play] = useSound(boopSfx);
-  
+  const [play3] = useSound(boopSfx3);
+  const [play4] = useSound(boopSfx4);
+  const [play5] = useSound(boopSfx5);
+
 
 return (
 		<div>
-                <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+                <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play3(),navigate(`/`))} ></img>
 
-			<div style={{ width:'10vw'}}>
-								<Boton onClick={() => (play(),cambiarEstadoLogo(1))} style={{fontSize:'40px', fontWeight:'1000', letterSpacing:'-3px', width:'3.5vw', paddingLeft:'0.8vw'}}>tc</Boton>
-								<Boton3 onClick={() => (play(),navigate(`/`))} style={{fontSize:'25px', fontWeight:'200', width:'8vw', height:'6vh', marginTop:'65vh', marginLeft:'-3vw'}}>REINICIAR</Boton3>
 
-			</div>
-
-					<ContenedorTerminos style={{position:'absolute', backgroundColor:'#dcdef1', marginLeft:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px',display:'flex',flexDirection:'row', marginTop:'-43%' }}>
+					<ContenedorTerminos style={{position:'absolute', backgroundColor:'#dcdef1', marginLeft:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px',display:'flex',flexDirection:'row', marginTop:'13%' }}>
 					<div style={{width:'65%', backgroundColor:'white', height:'90%', marginTop:'3.5vh', marginLeft:'1vw', border: '2px solid', borderRadius:'0.5vw'}}>
                         <div style={{marginTop:'20px'}}>
                             <u style={{fontWeight:'bold', marginLeft:'14%'}}>HAZ CLICK EN LAS GALLETITAS PARA COMERLAS</u>
                         </div>
-                        <img src={estadoCookie === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw', position:'fixed', marginTop:'4vh', marginLeft:'3vw'}} onClick={()=>(play(),cambiarEstadoCookie(1),cambiarEstadoModal(1),cambiarTipoModal(1))}></img>
-                        <img src={estadoCookie2 === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'32vw', marginTop:'9%'}} onClick={()=>(play(),cambiarEstadoCookie2(1),cambiarEstadoModal(1),cambiarTipoModal(2))}></img>
-                        <img src={estadoCookie3 === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'13vw', marginTop:'27%'}} onClick={()=>(play(),cambiarEstadoCookie3(1),cambiarEstadoModal(1),cambiarTipoModal(3))}></img>
-                        <img src={estadoCookie4 === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'20vw', marginTop:'15%'}} onClick={()=>(play(),cambiarEstadoCookie4(1),cambiarEstadoModal(1),cambiarTipoModal(4))}></img>
-                        <img src={estadoCookie5 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'30vw', marginBottom:'15vh'}} onClick={()=>(play(),cambiarEstadoCookie5(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie6 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'28vw',marginTop:'21vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie6(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie7 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'12vw',marginTop:'3vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie7(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie8 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'3vw',marginTop:'35vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie8(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie9 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'5vw',marginTop:'18vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie9(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie10 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'22vw',marginTop:'7vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie10(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie11 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'10vw',marginTop:'25vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie11(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie12 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'15vw',marginTop:'15vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie12(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie13 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'30vw',marginTop:'38vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie13(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie14 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'22vw',marginTop:'39vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie14(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie15 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'40vw',marginTop:'28vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie15(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie16 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'40vw',marginTop:'12vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie16(1),cambiarEstadoModal2(1))}></img>
-                        <img src={estadoCookie17 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'37vw',marginTop:'3vh', position:'absolute'}} onClick={()=>(play(),cambiarEstadoCookie17(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw', position:'fixed', marginTop:'4vh', marginLeft:'3vw'}} onClick={()=>(play5(),cambiarEstadoCookie(1),cambiarEstadoModal(1),cambiarTipoModal(1))}></img>
+                        <img src={estadoCookie2 === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'32vw', marginTop:'9%'}} onClick={()=>(play5(),cambiarEstadoCookie2(1),cambiarEstadoModal(1),cambiarTipoModal(2))}></img>
+                        <img src={estadoCookie3 === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'13vw', marginTop:'24%'}} onClick={()=>(play5(),cambiarEstadoCookie3(1),cambiarEstadoModal(1),cambiarTipoModal(3))}></img>
+                        <img src={estadoCookie4 === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'20vw', marginTop:'15%'}} onClick={()=>(play5(),cambiarEstadoCookie4(1),cambiarEstadoModal(1),cambiarTipoModal(4))}></img>
+                        <img src={estadoCookie5 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'30vw', marginBottom:'15vh'}} onClick={()=>(play4(),cambiarEstadoCookie5(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie6 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'28vw',marginTop:'21vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie6(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie7 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'12vw',marginTop:'3vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie7(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie8 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'3vw',marginTop:'35vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie8(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie9 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'5vw',marginTop:'18vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie9(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie10 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'22vw',marginTop:'7vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie10(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie11 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'10vw',marginTop:'25vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie11(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie12 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'15vw',marginTop:'15vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie12(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie13 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'30vw',marginTop:'38vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie13(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie14 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'22vw',marginTop:'39vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie14(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie15 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'40vw',marginTop:'28vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie15(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie16 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'40vw',marginTop:'12vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie16(1),cambiarEstadoModal2(1))}></img>
+                        <img src={estadoCookie17 === 0  ? cookieentera : luna} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'37vw',marginTop:'3vh', position:'absolute'}} onClick={()=>(play4(),cambiarEstadoCookie17(1),cambiarEstadoModal2(1))}></img>
                            
                                   {
                                     estadoCookie === 1 && estadoCookie2 === 1 && estadoCookie3 === 1 && estadoCookie4 === 1 ?
                                             
                                     <div onMouseOver={()=> cambiarhoverBoton(1)} onMouseOut={()=>  cambiarhoverBoton(0)} style={{width:'9vw',height:'10vh', marginLeft:'40vw',marginTop:'40vh', position:'fixed'}}>
-                                        <img   src={cookieentera} alt='Luna' style={{width:'9vw', marginLeft:'0vw', position:'absolute',visibility: hoverBoton === 0 ?'hidden' : 'visible'}} onClick={()=>(play(),cambiarEstadoModal(1),cambiarTipoModal(5))}></img>
+                                        <img   src={cookieentera} alt='Luna' style={{width:'9vw', marginLeft:'0vw', position:'absolute',visibility: hoverBoton === 0 ?'hidden' : 'visible'}} onClick={()=>(play5(),cambiarEstadoModal(1),cambiarTipoModal(5))}></img>
                                     </div>
                                                             : null
 
@@ -88,7 +89,7 @@ return (
 
                                               </div>
                     <div style={{width:'30%', backgroundColor:'white', height:'90%', marginTop:'3.5vh', marginLeft:'1vw', border: '2px solid', borderRadius:'0.5vw'}}>
-                        <h2 style={{fontSize:'2.5vw', marginTop:'2vh', marginLeft:'4.2vw'}}>GALLETITAS</h2>
+                        <h2 style={{fontSize:'2.5vw', marginTop:'4vh', marginLeft:'4.2vw'}}>GALLETITAS</h2>
                         <div style={{width:'17vw', marginLeft:'3vw', marginTop:'3vh'}}>
                             <p style={{fontSize:'1.2vw'}}>Come todas las galletitas para poder seguir.</p>
                         </div>

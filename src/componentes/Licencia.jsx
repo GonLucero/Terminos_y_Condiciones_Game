@@ -3,6 +3,7 @@ import Modal from '../componentes/Modal';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import boopSfx from '../sounds/click.mp3';
+import boopSfx3 from '../sounds/reiniciar.mp3';
 import { useNavigate } from 'react-router-dom'
 import reinicio from '../assets/general/reinicio.png'
 
@@ -14,11 +15,11 @@ const Licencia = () => {
   const [checkbox, setCheckbox] = useState(0);
   const [checkbox2, setCheckbox2] = useState(0);
   const [play] = useSound(boopSfx);
-
+  const [play3] = useSound(boopSfx3);
 
 return (
 		<div>
-			          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play(),navigate(`/`))} ></img>
+			          <img src={reinicio}  alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'12vw',cursor: 'pointer', backgroundColor:'red', marginTop:'3vh', border:'2px solid'}} onClick={()=>(play3(),navigate(`/`))} ></img>
 				{
 					continuar === 0
 					?
@@ -48,11 +49,11 @@ return (
   
                         <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={checkbox} onChange={()=> setCheckbox(!checkbox)}  style={{width:'4vw', height:'3vw'}} />
+                                <input type="checkbox" id="topping" name="topping" checked={checkbox} onChange={()=> (play(),setCheckbox(!checkbox))}  style={{width:'4vw', height:'3vw'}} />
                                 <h3 style={{marginLeft:'0.5vw', fontSize:'1.5vw', width:'100%'}}> Te comprometes a no realizar ingeniería inversa, descompilación, ni modificar de ninguna manera nuestros productos y servicios. </h3>
                             </div>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={checkbox2} onChange={()=> setCheckbox2(!checkbox2)} style={{width:'4vw', height:'3vw'}} />
+                                <input type="checkbox" id="topping" name="topping" checked={checkbox2} onChange={()=> (play(),setCheckbox2(!checkbox2))} style={{width:'4vw', height:'3vw'}} />
                                 <h3 style={{marginLeft:'0.5vw', fontSize:'1.5vw', width:'100%'}}>  Reconoces que la propiedad intelectual sigue siendo propiedad exclusiva nuestra.</h3>
                             </div>
                             {
