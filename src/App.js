@@ -26,6 +26,7 @@ function App() {
   const [estadoLogo, cambiarEstadoLogo] = useState(0);
 
   const [play] = useSound(boopSfx);
+  
 
   const [audio] = useState(new Audio(audioPath))
   const [playing, setPlaying] = useState(false)
