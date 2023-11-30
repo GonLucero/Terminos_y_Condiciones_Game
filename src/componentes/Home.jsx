@@ -81,11 +81,11 @@ return (
 					<ContenedorTerminos style={{position:'absolute', marginLeft:'20%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 					
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px',borderTopRightRadius:'10px'}}>
-						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
+						<h1 style={{marginBottom:'15px',fontFamily: 'Source code pro'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
 					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'0%', }}>
-						<h1 style={{fontSize:'200%'}}><b>INICIO</b></h1>
-						<h2 style={{marginTop:'5%', width:'80%', textAlign:'center', marginLeft:'9%', fontSize:'2.3vw'}}>
+						<h1 style={{fontSize:'200%',fontFamily: 'Source code pro'}}><b>INICIO</b></h1>
+						<h2 style={{marginTop:'5%', width:'80%', textAlign:'center', marginLeft:'9%', fontSize:'2.3vw',fontFamily: 'Archivo'}}>
 							Al acceder a este sitio web, asumimos que <b><u>aceptas</u></b> estos <i>términos y condiciones</i>. <del>No</del> continúes usando el sitio si no estás de acuerdo con todos los <b><i>términos y condiciones</i></b> establecidos en esta página.
 						</h2>
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'3vh', marginBottom:'3vh', height:'10vh',alignItems:'center', marginLeft:'3vw'}}>
@@ -98,14 +98,14 @@ return (
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'20%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 						
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
-						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
+						<h1 style={{marginBottom:'15px',fontFamily: 'Source code pro'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
 					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'10%', marginTop:'0%', }}>
 						<h1 style={{fontSize:'200%'}}><b>¿CON HAMBRE...?</b></h1>
 						{
 							continuar2 === 0
 							?
-							<h2 style={{marginTop:'5%', width:'80%', textAlign:'center', marginLeft:'9%', fontSize:'2.3vw'}}>
+							<h2 style={{marginTop:'5%', width:'80%', textAlign:'center', marginLeft:'9%', fontSize:'2.3vw',fontFamily: 'Archivo'}}>
 							Este sitio web utiliza cookies web para personalizar tu experiencia según el tipo de contenido que consumes. Las cookies de esta página se pueden utilizar para ejecutar programas <del>y enviar virus a tu computadora.</del> 						
 						</h2>
 						:

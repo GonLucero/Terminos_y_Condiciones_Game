@@ -27,11 +27,11 @@ return (
 					
 					
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px',borderTopRightRadius:'10px'}}>
-						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
+						<h1 style={{marginBottom:'15px',fontFamily: 'Source code pro'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
 					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'11%', marginTop:'0%',}}>
-						<h1 style={{fontSize:'200%'}}><b>LICENCIA</b></h1>
-						<h2 style={{marginTop:'5%', width:'90%', textAlign:'center', paddingLeft:'0%', fontSize:'2.3vw'}}>
+						<h1 style={{fontSize:'200%',fontFamily: 'Source code pro'}}><b>LICENCIA</b></h1>
+						<h2 style={{marginTop:'5%', width:'90%', textAlign:'center', paddingLeft:'0%', fontSize:'2.3vw',fontFamily: 'Archivo'}}>
                         Poseemos los derechos de propiedad intelectual de todo el material del sitio. Puedes acceder al mismo bajo las restricciones establecidas. Estos  <del>términos y condiciones</del> son un contrato entre usted y el sitio. Se le otorga una licencia  <del>irrevocable</del>para descargar, instalar y utilizarlo bajo un acuerdo esctricto con los términos de este acuerdo.						</h2>
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-4%', height:'10vh',alignItems:'center', marginLeft:'75%'}}>
 									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(),cambiarContinuar(1))}> {'>'} </Boton2>
@@ -40,16 +40,16 @@ return (
 				</ContenedorTerminos>
 				:
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'20%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-				<h1 style={{marginLeft:'1vw'}}>LICENCIA</h1>
+				<h1 style={{marginLeft:'0.5vw',fontFamily: 'Source code pro'}}>LICENCIA</h1>
 
                         <div style={{marginTop:'1vh'}}>
-                            <u style={{fontWeight:'bold', marginLeft:'13vw'}}>DALE CLICK A LOS CUADRADOS PARA ACEPTAR</u>
+                            <u style={{fontWeight:'bold', marginLeft:'13.5vw',fontFamily: 'Archivo'}}>DALE CLICK A LOS CUADRADOS PARA ACEPTAR</u>
                         </div>
 
   
                         <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
-                                <input type="checkbox" id="topping" name="topping" checked={checkbox} onChange={()=> (play(),setCheckbox(!checkbox))}  style={{width:'4vw', height:'3vw'}} />
+                                <input type="checkbox" id="topping" name="topping" checked={checkbox} onChange={()=> (play(),setCheckbox(!checkbox))}  style={{width:'4vw', height:'3vw',fontFamily: 'Archivo'}} />
                                 <h3 style={{marginLeft:'0.5vw', fontSize:'1.5vw', width:'100%'}}> Te comprometes a no realizar ingeniería inversa, descompilación, ni modificar de ninguna manera nuestros productos y servicios. </h3>
                             </div>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
@@ -72,7 +72,7 @@ return (
                                 <h3 style={{marginLeft:'0.5vw', fontSize:'1.5vw', width:'100%'}}> Venta de datos: Tus datos personales son tan valiosos que los venderemos al mejor postor en un mercado digital clandestino.</h3>
                             </div>
                             <div style={{backgroundColor:'#dcdef1', width:'40vw', height:'10vh', marginTop:'3vh', border:'2px solid', marginLeft:'17.5%'}}>
-                                <h2 style={{marginLeft:'1vw', fontSize:'1.3vw', paddingTop:'1.7vh', fontWeight:'600', textAlign:'center'}}>Este documento establece las bases para una relación de uso respetuosa y de protección de datos, reforzando nuestro compromiso con la privacidad y la seguridad digital.</h2>
+                                <h2 style={{marginLeft:'1vw', fontSize:'1.3vw', paddingTop:'1.7vh', fontWeight:'600', textAlign:'center',fontFamily: 'Archivo'}}>Este documento establece las bases para una relación de uso respetuosa y de protección de datos, reforzando nuestro compromiso con la privacidad y la seguridad digital.</h2>
                             </div>
 							<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-7%', height:'10vh',alignItems:'center', marginLeft:'72%'}}>
 									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(),navigate(`/nodebes`))}> {'>'} </Boton2>

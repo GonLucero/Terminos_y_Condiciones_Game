@@ -45,11 +45,11 @@ return (
 					<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 					
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
-						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
+						<h1 style={{marginBottom:'15px', fontFamily:'Source code pro'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
 					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'-2%', marginTop:'1%'}}>
-						<h1 style={{fontSize:'200%', width:'70vw'}}><b>RESPONSABILIDAD DEL CONTENIDO</b></h1>
-						<h2 style={{marginTop:'5%', width:'40vw', textAlign:'center',fontSize:'150%', marginLeft:'25%'}}>
+						<h1 style={{fontSize:'200%', width:'70vw', fontFamily:'Source code pro'}}><b>RESPONSABILIDAD DEL CONTENIDO</b></h1>
+						<h2 style={{marginTop:'5%', width:'40vw', textAlign:'center',fontSize:'150%', marginLeft:'27%', fontFamily:'Archivo'}}>
 						No seremos responsables de ningún contenido que aparezca en tu sitio web. Tú y solo tú eres responsable de lo que publiques y compartas. Cualquier tipo de contenido podrá ser subido a esta web. No contamos con censura de ningún tipo.                          </h2>
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-4%', height:'10vh',alignItems:'center', marginLeft:'90%'}}>
 									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(),cambiarContinuar(1))}> {'>'} </Boton2>
@@ -60,7 +60,7 @@ return (
                 continuar2 === 0  ?
 				
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-				<h2 style={{width:'50vw', marginLeft:'6vw', marginTop:'4vh', textAlign:'center'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
+				<h2 style={{width:'50vw', marginLeft:'7vw', marginTop:'5vh', textAlign:'center', fontFamily:'Archivo'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
                         <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw', marginTop:'3vh'}}>
 							<img onClick={()=>(play2(),cambiarestado_imagen(1))} src={estado_imagen != 1 ? imagen1 : imagen11} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
 							<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw', visibility:estado_imagen != 1 ? 'visible' : 'hidden'}} ></img>
@@ -80,7 +80,7 @@ return (
                 :
 
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-				<h2 style={{width:'50vw', marginLeft:'6vw', marginTop:'4vh', textAlign:'center'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
+				<h2 style={{width:'50vw', marginLeft:'7vw', marginTop:'5vh', textAlign:'center', fontFamily:'Archivo'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
                 <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw', marginTop:'3vh'}}>
 					<img src={imagen5} onClick={()=> (play(),navigate(`/derechos`))} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
 					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw'}} ></img>

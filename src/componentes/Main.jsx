@@ -24,16 +24,16 @@ const Main = ({func}) => {
             <div style={{display:'flex', justifyContent:'flex-end', width:'7vw', marginTop:'15vh',alignItems:'flex-end', marginLeft:'51vw' }}>
 					<img src={tc} alt='Luna' style={{width:'5vw', position:'fixed', marginLeft:'2vw',cursor: 'pointer'}} onClick={()=>(play(),cambiarEstadoLogo(1))} ></img>
 			</div>
-				<h1 style={{fontWeight:'500', marginLeft:'12vw', marginTop:'-7vh'}}>TÉRMINOS Y CONDICIONES</h1>
+				<h1 style={{fontWeight:'700', marginLeft:'6vw', marginTop:'-7vh',fontFamily: 'Source code pro'}}>TÉRMINOS Y CONDICIONES</h1>
 				<div style={{height:'55%', width:'43vw', alignSelf:'center', marginLeft:'12vw', marginTop:'5vh'}}>
-				<h2 >
+				<h2 style={{fontFamily: 'Archivo'}}>
 					<b>“ELESPACIO.COM”</b> quiere que aceptes todos los <u>términos y condiciones</u>.
 					<p>Tu misión final es poder acceder a</p> <b>“ELESPACIO.COM”</b> pasando cada uno de los niveles que se te presentaran. 
 				</h2>
-				<h2 style={{fontStyle:'italic', marginTop:'7vh', marginLeft:'2vw'}}>Esto es un contrato, leelo bien.</h2>
+				<h2 style={{fontStyle:'italic', marginTop:'7vh', marginLeft:'0vw', fontFamily: 'Archivo'}}>Esto es un contrato, leelo bien.</h2>
 				<div style={{backgroundColor:'#dcdef1', width:'45vw', 	border: '3px solid', marginLeft:'-2vw', marginTop:'3vh', height:'15vh' }}>
-					<h4 style={{	fontSize:'200%', width:'40vw', marginLeft:'4vw', marginTop:'2vh'}}>
-					Ten cuidado... Hay cosas que estan fuera de control
+					<h4 style={{	fontSize:'160%', width:'50vw', marginLeft:'1.5vw', marginTop:'2.3vh', fontWeight:'500'}} >
+					Ten cuidado... Hay cosas que están fuera de control
 					</h4>
 				</div>
 				<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'45vw', marginLeft:'-2vw', marginTop:'6vh'}}>
@@ -101,6 +101,11 @@ const ContenedorTerminos = styled.div`
 		font-weight: 200;
 		
 	}
+		
+    h4 {
+		font-family: 'Source Code Pro', monospace;
+
+    }
 `;
 
 

@@ -176,16 +176,16 @@ return (
 					<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 					
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
-						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
+						<h1 style={{marginBottom:'15px', fontFamily:'Source code pro'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
 					<div style={{ height:'55%', width:'80%', alignSelf:'center', marginLeft:'1%', marginTop:'0%',}}>
-						<h1 style={{fontSize:'200%', width:'65vw'}}><b>ELIMINACIÓN DE ENLACES DE NUESTRA WEB</b></h1>
-						<h2 style={{marginTop:'2%', textAlign:'center', fontSize:'130%', marginLeft:'17%', width:'90%'}}>
+						<h1 style={{fontSize:'200%', width:'65vw', fontFamily:'Source code pro'}}><b>ELIMINACIÓN DE ENLACES DE NUESTRA WEB</b></h1>
+						<h2 style={{marginTop:'2%', textAlign:'center', fontSize:'130%', marginLeft:'17%', width:'90%', fontFamily:'Archivo'}}>
 						Si encuentras algún enlace en nuestro sitio que sea ofensivo por cualquier motivo, puedes contactarnos e informarnos en cualquier momento. Consideraremos las solicitudes para eliminar enlaces, pero no estamos obligados a hacerlo ni a responder directamente.
 						No nos aseguramos de que la información de este sitio web sea correcta. Tampoco garantizamos su integridad o precisión, ni podemos asegurar que el sitio web permanecerá disponible en el futuro.
 
                         </h2>
-						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-9%', height:'10vh',alignItems:'center', marginLeft:'86%'}}>
+						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-8%', height:'10vh',alignItems:'center', marginLeft:'88%'}}>
 									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(),cambiarContinuar(1))}> {'>'} </Boton2>
 						</div>
 					</div>
@@ -194,10 +194,10 @@ return (
                 continuar2 === 0
                 ?
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-						<h1 style={{fontSize:'200%', width:'70vw', marginLeft:'-3%'}}><b>ELIMINACIÓN DE ENLACES DE NUESTRA WEB</b></h1>
+						<h1 style={{fontSize:'200%', width:'70vw', marginLeft:'-3%', fontFamily:'Source code pro'}}><b>ELIMINACIÓN DE ENLACES DE NUESTRA WEB</b></h1>
 
                         <div style={{marginTop:'1vh'}}>
-                            <a style={{display:'flex', marginLeft:'15vw', fontSize:'110%'}}>Identifica los enlaces engañosos para avanzar.</a>
+                            <a style={{display:'flex', marginLeft:'16vw', fontSize:'110%', fontFamily:'Archivo'}}>Identifica los enlaces engañosos para avanzar.</a>
                         </div>
                         <div style={{display:'flex', flexDirection:'row', marginTop:'1vh', marginLeft:'3.5%'}}>
                         <div onClick={()=> (play6(),setbox(1))} style={{cursor:'pointer', width:'27vw', border:box === 0 ? '2px solid' : 'none', height:'12vh', padding:'5px', marginTop:'3vh', marginLeft:'2vw'}}>
@@ -249,7 +249,7 @@ return (
                 </div>
                          
                 <div style={{position:'fixed', width:'40%', height:'10%', backgroundColor:'rgba(220,222,241,0.3)', marginTop:'-27%', marginLeft:'12%'}}>
-                        <h2 style={{paddingTop:'6%', paddingLeft:'9%'}}>Lee el texto para poder seguir</h2>
+                        <h2 style={{paddingTop:'6%', paddingLeft:'12%', fontFamily:'Archivo'}}>Lee el texto para poder seguir</h2>
               </div>
               <div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'-6%', height:'10vh',alignItems:'center', marginLeft:'45%', position:'fixed'}}>
 									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(),cambiarContinuar3(1))}> {'>'} </Boton2>
@@ -260,17 +260,17 @@ return (
           ?
           <ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
           <div style={{marginTop:'2vh', width:'100%'}}>
-                          <h1 style={{fontSize:'4vw', textAlign:'center'}}>EXENCIÓN DE RESPONSABILIDAD</h1>
+                          <h1 style={{fontSize:'4vw', textAlign:'center', fontFamily:'Source code pro'}}>EXENCIÓN DE RESPONSABILIDAD</h1>
                           </div>
               <div style={{display:'flex', flexDirection:'row', marginTop:'1%'}}>
                           <div style={{width:'38vw', marginLeft:'10vw', justifyContent:'center', marginTop:'4%'}}>    
-                              <h3 style={{alignSelf:'center', fontSize:'3vw', marginLeft:'11vw'}}>Escriba el código:</h3>                    
+                              <h3 style={{alignSelf:'center', fontSize:'3vw', marginLeft:'11vw', fontFamily:'Archivo'}}>Escriba el código:</h3>                    
                           <input 
               onFocus={() => (setChecked(true),setInputFocused(1))}
                           type="text" 
                           value={ inputValue } 
                           onChange={ handleInputChange } 
-                          style={{height:'10vh', width:'45vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'14vw', fontSize:'3vw', marginTop:'3%'}}
+                          style={{height:'10vh', width:'45vw', borderRadius:'0.6vw', backgroundColor:'#dcdef1', border:'1px solid', paddingLeft:'14vw', fontSize:'3vw', marginTop:'3%', fontFamily:'Archivo'}}
   
                           className="SearchbarInput"
                            />
@@ -312,12 +312,12 @@ return (
           </ContenedorTerminos>
           :
           <ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
-          <h1 style={{fontSize:'4vw', width:'70vw', marginLeft:'-2vw'}}><b>GRACIAS POR JUGAR</b></h1>
+          <h1 style={{fontSize:'4vw', width:'70vw', marginLeft:'-2vw'}}><b style={{ fontFamily:'Source code pro'}}>GRACIAS POR JUGAR</b></h1>
           <div style={{backgroundColor:'#dcdef1', width:'45vw', height:'20vh', marginLeft:'9.5vw', marginTop:'5vh', borderRadius:'1.5vw'}}>
-             <h2 style={{textAlign:'center', width:'40vw', marginLeft:'2.8vw', paddingTop:'5vh', fontSize:'130%'}}> Te pedimos disculpas, “ELESPACIO.COM” ha sido dado de baja por algunos inconvenientes con la ley.  </h2>
+             <h2 style={{textAlign:'center', width:'40vw', marginLeft:'2.8vw', paddingTop:'5vh', fontSize:'130%', fontFamily:'Archivo'}}> Te pedimos disculpas, “ELESPACIO.COM” ha sido dado de baja por algunos inconvenientes con la ley.  </h2>
           </div>
           <div style={{backgroundColor:'#dcdef1', width:'45vw', height:'20vh', marginLeft:'9.5vw', marginTop:'5vh', borderRadius:'1.5vw'}}>
-          <h2 style={{textAlign:'center', width:'40vw', marginLeft:'2.8vw', paddingTop:'6vh', fontSize:'130%'}}>De todas formas, clickea en el link si te interesaba <a style={{color:'blue'}} href="https://elespacio.cargo.site/ "> “ELESPACIO.COM”</a></h2>
+          <h2 style={{textAlign:'center', width:'40vw', marginLeft:'2.8vw', paddingTop:'6vh', fontSize:'130%', fontFamily:'Archivo'}}>De todas formas, clickea en el link si te interesaba <a style={{color:'blue'}} href="https://elespacio.cargo.site/ "> “ELESPACIO.COM”</a></h2>
 
           </div>
 

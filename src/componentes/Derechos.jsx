@@ -113,11 +113,11 @@ return (
 					<ContenedorTerminos style={{position:'absolute', marginLeft:'18%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px'}}>
 					
 					<div style={{backgroundColor:'#dcdef1', borderBottom: '2px solid',borderTopLeftRadius:'10px'}}>
-						<h1 style={{marginBottom:'15px'}}>TÉRMINOS Y CONDICIONES</h1>
+						<h1 style={{marginBottom:'15px', fontFamily:'Source code pro'}}>TÉRMINOS Y CONDICIONES</h1>
 					</div>
 					<div style={{ height:'55%', width:'120%', alignSelf:'center', marginLeft:'-6vw', marginTop:'0%',}}>
-						<h1 style={{fontSize:'200%'}}><b>RESERVA DE DERECHOS</b></h1>
-						<h2 style={{marginTop:'3%', width:'53vw', marginLeft:'12vw', textAlign:'center',fontSize:'150%'}}>
+						<h1 style={{fontSize:'200%', fontFamily:'Source code pro'}}><b>RESERVA DE DERECHOS</b></h1>
+						<h2 style={{marginTop:'3%', width:'53vw', marginLeft:'12vw', textAlign:'center',fontSize:'150%', fontFamily:'Archivo'}}>
                         Nos reservamos el derecho a modificar o eliminar los datos ingresados, almacenarlos y utilizarlos para diversos fines. También nos reservamos el derecho a modificar estos términos y condiciones en cualquier momento.                     </h2>
 						<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', width:'25vw', marginTop:'6%', height:'10vh',alignItems:'center', marginLeft:'68%'}}>
 									<Boton2  style={{fontSize:'2vw', width:'6vw', height:'6vw', fontSize:'250%'}} onClick={() => (play(),cambiarContinuar(1))}> {'>'} </Boton2>
@@ -128,11 +128,11 @@ return (
                 continuar2 === 0 ?
 				<ContenedorTerminos style={{position:'absolute', marginLeft:'10%', marginTop:'12%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px', width:'80vw'}}>
 				<div style={{marginTop:'4vh'}}>
-                        <b><u style={{fontSize:'3vw', marginLeft:'24vw'}}>INGRESÁ TUS DATOS</u></b>
+                        <b><u style={{fontSize:'3vw', marginLeft:'25vw', fontFamily:'Source code pro'}}>INGRESÁ TUS DATOS</u></b>
                         </div>
 						<div style={{display:'flex', flexDirection:'row', marginTop:'1%'}}>
                         <div style={{width:'28vw', marginLeft:'11vw', justifyContent:'center', marginTop:'2%'}}>    
-                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Nombre:</h3>                    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw', fontFamily:'Archivo'}}>Nombre:</h3>                    
                         <input 
 						onFocus={() => (setChecked(true),setInputFocused(1))}
                         type="text" 
@@ -145,7 +145,7 @@ return (
                         </div>
 
                         <div style={{width:'28vw', marginLeft:'4vw', justifyContent:'center', marginTop:'2%'}}>    
-                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Email:</h3>                    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw', fontFamily:'Archivo'}}>Email:</h3>                    
                         <input 
 						onFocus={() => (setChecked(true),setInputFocused(2))}
 
@@ -161,7 +161,7 @@ return (
 						<div style={{display:'flex', flexDirection:'row'}}>
 
                         <div style={{ width:'28vw', marginTop:'5vh', marginLeft:'11vw'}}>    
-                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Nacionalidad:</h3>                    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw', fontFamily:'Archivo'}}>Nacionalidad:</h3>                    
                         <input 
 						onFocus={() => (setChecked(true),setInputFocused(3))}
 
@@ -175,7 +175,7 @@ return (
                         </div>
 
 						<div style={{ width:'28vw', marginTop:'5vh', marginLeft:'4vw'}}>    
-                            <h3 style={{alignSelf:'center', fontSize:'2.8vw'}}>Edad:</h3>                    
+                            <h3 style={{alignSelf:'center', fontSize:'2.8vw', fontFamily:'Archivo'}}>Edad:</h3>                    
                         <input 
 						onFocus={() => (setChecked(true),setInputFocused(4))}
                         type="text" 
@@ -228,24 +228,24 @@ return (
 							<img src={perfil === 2 || perfil === 3 ? hombreperfil : mujerperfil } style={{width:'15vw'}}></img>
 						</div>
 						<div style={{ width:'25vw', height:'28vh', backgroundColor:'#dcdef1', marginLeft:'2.3vw', marginTop:'25vh'}}>
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'1vh'}}>Nombre:  </h3>
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}}>{perfil === 0 ? 'Juana Chispa' : perfil === 1 ? 'Isabella Espejo': perfil === 2 ? 'Carlos Burbujez' : perfil === 3 ?'Oscar Malabar' : 'Renata Vallejos'}</h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh', fontFamily:'Archivo'}}>Nombre:  </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh', fontFamily:'Archivo'}}>{perfil === 0 ? 'Juana Chispa' : perfil === 1 ? 'Isabella Espejo': perfil === 2 ? 'Carlos Burbujez' : perfil === 3 ?'Oscar Malabar' : 'Renata Vallejos'}</h3>
 
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh'}} >Email: </h3>
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}} >{perfil === 0 ?'juanachispita@gmail.com': perfil === 1 ? 'isabellajimenez@hotmail.com' : perfil === 2 ?'carlosburbujez@gmail.com': perfil === 3 ? 'oscarmalab@gmail.com' : 'renuvallejos@gmail.com'}</h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh', fontFamily:'Archivo'}} >Email: </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh', fontFamily:'Archivo'}} >{perfil === 0 ?'juanachispita@gmail.com': perfil === 1 ? 'isabellajimenez@hotmail.com' : perfil === 2 ?'carlosburbujez@gmail.com': perfil === 3 ? 'oscarmalab@gmail.com' : 'renuvallejos@gmail.com'}</h3>
 
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh'}} >Edad: </h3>
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}} >{perfil === 0 ? '21 años' : perfil === 1 ? 'Inmortal' : perfil === 2 ?  '28 años': perfil === 3 ? '37 años' : '19 años'}</h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh', fontFamily:'Archivo'}} >Edad: </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh', fontFamily:'Archivo'}} >{perfil === 0 ? '21 años' : perfil === 1 ? 'Inmortal' : perfil === 2 ?  '28 años': perfil === 3 ? '37 años' : '19 años'}</h3>
 
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh'}} >Nacionalidad: </h3>
-							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh'}} >{perfil === 0 ?'MEXICANA': perfil === 1 || perfil === 4 ? 'ARGENTINA' : perfil === 2 ? 'BOLIVIANO' : 'DEL MUNDO'}</h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'2vh', fontFamily:'Archivo'}} >Nacionalidad: </h3>
+							<h3 style={{fontSize:'1.6vw', marginLeft:'1vw', marginTop:'0vh', fontFamily:'Archivo'}} >{perfil === 0 ?'MEXICANA': perfil === 1 || perfil === 4 ? 'ARGENTINA' : perfil === 2 ? 'BOLIVIANO' : 'DEL MUNDO'}</h3>
 
 						</div>
 					</div>
 					<div style={{width:'33vw', height:'68vh', marginTop:'-70vh', marginLeft:'30vw'}}>
 						<div style={{display:'flex', flexDirection:'column'}}>
                     <div style={{ width:'30vw', height:'30vh', marginLeft:'2vw', marginTop:'5vh'}}>
-                        <p style={{fontSize:'1.8vw', padding:'10px', textAlign:'center'}}>
+                        <p style={{fontSize:'1.8vw', padding:'10px', textAlign:'center', fontFamily:'Archivo'}}>
                             {
                                 perfil === 0 ?
                                 'Juanita Chispa, destaca por su obsesión desenfrenada por la moda y las prendas lujosas. Su guardarropa rebosa de coloridos trajes tropicales y accesorios llamativos que reflejan su amor por la elegancia extravagante.'
@@ -265,7 +265,7 @@ return (
                     </div>
 
                     <div style={{backgroundColor:'#dcdef1', width:'23vw', height:'25vh', marginLeft:'8vh', marginTop:'-1vh', border:'1px solid'}}>
-                        <p style={{padding:'12px', width:'23vw',textAlign:'center', fontSize:'1.5vw'}}>
+                        <p style={{padding:'12px', width:'23vw',textAlign:'center', fontSize:'1.5vw', fontFamily:'Archivo', marginTop:'7%'}}>
                         ¡Gracias por tus datos!. Estos son tus datos modificados para que tu uso en esta web sea mas optimo y todo pueda fluir mejor. Tus verdaderos datos nos aportan un granito de arena para que podamos venderlos y que esta pagina web pueda subsistir.
                         </p>
                     </div>

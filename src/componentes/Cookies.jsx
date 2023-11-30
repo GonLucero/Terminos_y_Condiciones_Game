@@ -56,7 +56,7 @@ return (
 					<ContenedorTerminos style={{position:'absolute', backgroundColor:'#dcdef1', marginLeft:'10%', borderRadius:'10px', border:'3px solid', borderBottomWidth:'7px',borderRightWidth:'7px',borderBottomRightRadius:'15px',borderBottomLeftRadius:'15px',display:'flex',flexDirection:'row', marginTop:'13%' }}>
 					<div style={{width:'65%', backgroundColor:'white', height:'90%', marginTop:'3.5vh', marginLeft:'1vw', border: '2px solid', borderRadius:'0.5vw'}}>
                         <div style={{marginTop:'20px'}}>
-                            <u style={{fontWeight:'bold', marginLeft:'14%'}}>HAZ CLICK EN LAS GALLETITAS PARA COMERLAS</u>
+                            <u style={{fontWeight:'bold', marginLeft:'14%',fontFamily: 'Archivo'}}>HAZ CLICK EN LAS GALLETITAS PARA COMERLAS</u>
                         </div>
                         <img src={estadoCookie === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw', position:'fixed', marginTop:'4vh', marginLeft:'3vw'}} onClick={()=>(play5(),cambiarEstadoCookie(1),cambiarEstadoModal(1),cambiarTipoModal(1))}></img>
                         <img src={estadoCookie2 === 0  ? cookieentera : cookie} alt='Luna' style={{width:'9vw',position:'fixed', marginLeft:'32vw', marginTop:'9%'}} onClick={()=>(play5(),cambiarEstadoCookie2(1),cambiarEstadoModal(1),cambiarTipoModal(2))}></img>
@@ -89,30 +89,30 @@ return (
 
                                               </div>
                     <div style={{width:'30%', backgroundColor:'white', height:'90%', marginTop:'3.5vh', marginLeft:'1vw', border: '2px solid', borderRadius:'0.5vw'}}>
-                        <h2 style={{fontSize:'2.5vw', marginTop:'4vh', marginLeft:'4.2vw'}}>GALLETITAS</h2>
+                        <h2 style={{fontSize:'2.5vw', marginTop:'4vh', marginLeft:'4.2vw',fontFamily: 'Archivo'}}>GALLETITAS</h2>
                         <div style={{width:'17vw', marginLeft:'3vw', marginTop:'3vh'}}>
-                            <p style={{fontSize:'1.2vw'}}>Come todas las galletitas para poder seguir.</p>
+                            <p style={{fontSize:'1.2vw',fontFamily: 'Archivo'}}>Come todas las galletitas para poder seguir.</p>
                         </div>
                         <div className="topping" style={{display:'flex', flexDirection:'column', marginLeft:'1vw'}}>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'7vh'}}>
                                 <input type="checkbox" id="topping" name="topping" checked={estadoCookie != 0 ? true : false} style={{width:'3vw'}} />
-                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw'}}> Invasión de la privacidad</h3>
+                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw',fontFamily: 'Archivo'}}> Invasión de la privacidad</h3>
                             </div>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
                                 <input type="checkbox" id="topping" name="topping" checked={estadoCookie2 != 0 ? true : false} style={{width:'3vw'}} />
-                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw'}}>Adicción a la personalización</h3>
+                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw',fontFamily: 'Archivo'}}>Adicción a la personalización</h3>
                             </div>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
                                 <input type="checkbox" id="topping" name="topping" checked={estadoCookie3 != 0 ? true : false} style={{width:'3vw'}} />
-                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw'}}>Control mental digital</h3>
+                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw',fontFamily: 'Archivo'}}>Control mental digital</h3>
                             </div>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
                                 <input type="checkbox" id="topping" name="topping" checked={estadoCookie4 != 0 ? true : false} style={{width:'3vw'}} />
-                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw'}}>Pérdida de la identidad digital</h3>
+                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw',fontFamily: 'Archivo'}}>Pérdida de la identidad digital</h3>
                             </div>
                             <div style={{display:'flex',flexDirection:'row', marginTop:'3vh'}}>
                                 <input type="checkbox" id="topping" name="topping" value="Paneer"  checked={estadoCookie18 != 0 ? true : false} style={{width:'3vw'}}  />
-                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw'}}>Esclavitud de la publicidad</h3>
+                                <h3 style={{marginLeft:'0.2vw', fontSize:'1.3vw',fontFamily: 'Archivo'}}>Esclavitud de la publicidad</h3>
                             </div>
                             {
                                 estadoCookie18 === 1 ?
@@ -149,7 +149,7 @@ return (
 							<b style={{marginTop:'6vh', fontSize:'3vh', marginLeft:'1vw'}}>Mmmmm.....</b>
                         </div>
                         <div style={{ width:'30vw', marginBottom:'3vh'}}>
-							<h3 style={{textAlign:'center'}}>                               
+							<h3 style={{textAlign:'center',fontFamily: 'Archivo'}}>                               
                             {tipoModal === 1 ? 'Las cookies son como pequeños espías que registran hasta tu último click, observandote como si fueran una versión digital de Gran Hermano.': tipoModal === 4 ?'Estas permitiendo que tu perfil digital sea tan detallado que hasta los agentes secretos se sorprenderán.' : tipoModal === 2 ?'Las cookies convertirán a esta web en un amigo cercano que siempre sabrá lo que quieras, limitando tu exposición a nuevas ideas y experiencias.' : tipoModal === 3 ?'Las cookies no solo rastrearán tu historial, sino que también parecen conocer tus pensamientos antes de lo que pienses. ¿Quien necesita libre albedrío cuando las cookies te dicen que querer?' : 'Al aceptarlas, estás abriendo las puertas de un paraíso publicitario, donde anuncios persiguen tus deseos hasta en tus pesadillas.'} 
                             </h3>
                         
@@ -177,9 +177,9 @@ return (
 						<Contenido style={{backgroundColor:'white', }}>
                         <div style={{display:'flex',flexDirection:'row', marginRight:'9vw'}}>
                         <img src={luna} alt='Luna' style={{width:'13vw'}}></img>
-							<b style={{marginTop:'5vh', fontSize:'5vh'}}>Upps!</b>
+							<b style={{marginTop:'5vh', fontSize:'5vh',fontFamily: 'Archivo'}}>Upps!</b>
                         </div>
-                        <div style={{ width:'25vw', marginBottom:'3vh', marginTop:'-2vh', marginLeft:'3vw'}}>
+                        <div style={{ width:'25vw', marginBottom:'3vh', marginTop:'-2vh', marginLeft:'3vw',fontFamily: 'Archivo'}}>
 							<h3>                               
                                 Te estás comiendo una Luna
                             </h3>
