@@ -63,18 +63,18 @@ return (
 				<h2 style={{width:'50vw', marginLeft:'7vw', marginTop:'5vh', textAlign:'center', fontFamily:'Archivo'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
                         <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw', marginTop:'3vh'}}>
 							<img onClick={()=>(play2(),cambiarestado_imagen(1))} src={estado_imagen != 1 ? imagen1 : imagen11} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
-							<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw', visibility:estado_imagen != 1 ? 'visible' : 'hidden'}} ></img>
+							<img onClick={()=>(play2(),cambiarestado_imagen(1))} src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw', visibility:estado_imagen != 1 ? 'visible' : 'hidden'}} ></img>
 
 							<img onClick={()=>(play2(),cambiarestado_imagen(2))} src={estado_imagen != 2 ? imagen2 : imagen22} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'30vw'}} ></img>
-							<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'36.5vw', visibility:estado_imagen != 2 ? 'visible' : 'hidden'}} ></img>
+							<img onClick={()=>(play2(),cambiarestado_imagen(2))} src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'36.5vw', visibility:estado_imagen != 2 ? 'visible' : 'hidden'}} ></img>
                         </div>
                         <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw'}}>
 							<img onClick={()=>(play2(),cambiarestado_imagen(3))} src={estado_imagen != 3 ? imagen3 : imagen33} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'2vw'}} ></img>
-							<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'8.5vw', visibility:estado_imagen != 3 ? 'visible' : 'hidden'}}></img>
+							<img onClick={()=>(play2(),cambiarestado_imagen(3))} src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'8.5vw', visibility:estado_imagen != 3 ? 'visible' : 'hidden'}}></img>
 							<div  >
 							<img onClick={()=>(play(),cambiarContinuar2(1))} src={imagen4} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'30vw'}} ></img>
 							</div>
-							<img  src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'36.5vw'}} ></img>
+							<img  onClick={()=>(play(),cambiarContinuar2(1))} src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'36.5vw'}} ></img>
                         </div>
 				</ContenedorTerminos>
                 :
@@ -83,17 +83,17 @@ return (
 				<h2 style={{width:'50vw', marginLeft:'7vw', marginTop:'5vh', textAlign:'center', fontFamily:'Archivo'}}>Sé un guardián de la moralidad digital y has de este sitio web un lugar predecible y libre de sorpresas. Haz click en la imagen más apropiada.</h2>
                 <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw', marginTop:'3vh'}}>
 					<img src={imagen5} onClick={()=> (play(),navigate(`/derechos`))} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'2vw'}} ></img>
-					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw'}} ></img>
+					<img src={iconeye} onClick={()=> (play(),navigate(`/derechos`))} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'8.5vw'}} ></img>
 
 					<img onClick={()=>(play2(),cambiarestado_imagen(6))} src={estado_imagen != 6 ? imagen6 : imagen22} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'2vh', marginLeft:'30vw'}} ></img>
-					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'36.5vw', visibility:estado_imagen != 6 ? 'visible' : 'hidden'}} ></img>
+					<img onClick={()=>(play2(),cambiarestado_imagen(6))} src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'4.5vh', marginLeft:'36.5vw', visibility:estado_imagen != 6 ? 'visible' : 'hidden'}} ></img>
                 </div>
                 <div style={{display:'flex', flexDirection:'row', marginLeft:'4.5vw'}}>
 					<img onClick={()=>(play2(),cambiarestado_imagen(7))} src={estado_imagen != 7 ? imagen7 : imagen11} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'2vw'}} ></img>
-					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'8.5vw', visibility:estado_imagen != 7 ? 'visible' : 'hidden'}} ></img>
+					<img onClick={()=>(play2(),cambiarestado_imagen(7))}  src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'8.5vw', visibility:estado_imagen != 7 ? 'visible' : 'hidden'}} ></img>
 
 					<img onClick={()=>(play2(),cambiarestado_imagen(8))} src={estado_imagen != 8 ? imagen8 : imagen33} alt='Luna' style={{width:'23vw', position:'fixed', marginTop:'22vh', marginLeft:'30vw'}} ></img>
-					<img src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'36.5vw', visibility:estado_imagen != 8 ? 'visible' : 'hidden'}} ></img>
+					<img onClick={()=>(play2(),cambiarestado_imagen(8))}  src={iconeye} alt='Luna' style={{width:'10vw', position:'fixed', marginTop:'24vh', marginLeft:'36.5vw', visibility:estado_imagen != 8 ? 'visible' : 'hidden'}} ></img>
                 </div>
         </ContenedorTerminos>
 				}
